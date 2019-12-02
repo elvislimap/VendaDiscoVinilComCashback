@@ -1,10 +1,11 @@
 ﻿using System.Threading.Tasks;
 using VinylRecordSale.Domain.Enums;
+using VinylRecordSale.Domain.IntegrationValues;
 
 namespace VinylRecordSale.Domain.Interfaces.Integrations
 {
     public interface ISpotifyIntegrationService
     {
-        Task<dynamic> GetAlbumsByGenres(MusicGenreEnum genreEnum, int maxByGenre);
+        Task<ResponseGetAlbumSpotify> GetAlbumsByGenres(MusicGenreEnum genreEnum, int maxByGenre);
     }
 }

@@ -9,10 +9,9 @@ namespace VinylRecordSale.Infra.Data.Mappings
     {
         public void Configure(EntityTypeBuilder<ConfigCashback> builder)
         {
-            builder.HasKey(c => c.GenreId);
-            builder.HasOne(c => c.MusicGenre).WithMany(g => g.ConfigCashbacks);
+            builder.HasKey(c => c.MusicGenreId);
 
-            builder.Property(c => c.GenreId).HasColumnType("int").IsRequired();
+            builder.Property(c => c.MusicGenreId).HasColumnType("int").IsRequired();
             builder.Property(c => c.PercentageSunday).HasColumnType("decimal(10,2)").HasDefaultValue(0M).IsRequired();
             builder.Property(c => c.PercentageMonday).HasColumnType("decimal(10,2)").HasDefaultValue(0M).IsRequired();
             builder.Property(c => c.PercentageTuesday).HasColumnType("decimal(10,2)").HasDefaultValue(0M).IsRequired();
@@ -24,7 +23,7 @@ namespace VinylRecordSale.Infra.Data.Mappings
             builder.HasData(
                 new ConfigCashback
                 {
-                    GenreId = (int)MusicGenreEnum.Pop,
+                    MusicGenreId = (int)MusicGenreEnum.Pop,
                     PercentageSunday = 25,
                     PercentageMonday = 7,
                     PercentageTuesday = 6,
@@ -35,7 +34,7 @@ namespace VinylRecordSale.Infra.Data.Mappings
                 },
                 new ConfigCashback
                 {
-                    GenreId = (int)MusicGenreEnum.Mpb,
+                    MusicGenreId = (int)MusicGenreEnum.Mpb,
                     PercentageSunday = 30,
                     PercentageMonday = 5,
                     PercentageTuesday = 10,
@@ -46,7 +45,7 @@ namespace VinylRecordSale.Infra.Data.Mappings
                 },
                 new ConfigCashback
                 {
-                    GenreId = (int)MusicGenreEnum.Classic,
+                    MusicGenreId = (int)MusicGenreEnum.Classic,
                     PercentageSunday = 35,
                     PercentageMonday = 3,
                     PercentageTuesday = 5,
@@ -57,7 +56,7 @@ namespace VinylRecordSale.Infra.Data.Mappings
                 },
                 new ConfigCashback
                 {
-                    GenreId = (int)MusicGenreEnum.Rock,
+                    MusicGenreId = (int)MusicGenreEnum.Rock,
                     PercentageSunday = 40,
                     PercentageMonday = 10,
                     PercentageTuesday = 15,

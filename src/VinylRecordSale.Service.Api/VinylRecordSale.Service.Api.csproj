@@ -9,6 +9,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20191202182815_Migration-Initial.cs" />
+    <Compile Remove="Migrations\20191202184410_Migration-Initial.cs" />
+    <Compile Remove="Migrations\20191202184946_Migration-Initial.cs" />
+    <Compile Remove="Migrations\20191202185709_Migration-Initial.cs" />
+    <Compile Remove="Migrations\20191202190942_Migration-Initial.cs" />
+    <Compile Remove="Migrations\20191202191322_Migration-Initial.cs" />
+    <Compile Remove="Migrations\20191202191530_Migration-Initial.cs" />
+    <Compile Remove="Migrations\20191202193446_Migration-Initial.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.3" />
@@ -19,6 +30,10 @@
   <ItemGroup>
     <ProjectReference Include="..\VinylRecordSale.Infra.CrossCutting.Ioc\VinylRecordSale.Infra.CrossCutting.Ioc.csproj" />
     <ProjectReference Include="..\VinylRecordSale.Infra.Data\VinylRecordSale.Infra.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

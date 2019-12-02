@@ -13,7 +13,7 @@ namespace VinylRecordSale.Domain.Commons
 
         public static string ToText(this object value)
         {
-            return value == null || string.IsNullOrEmpty(value.ToString())
+            return string.IsNullOrEmpty(value?.ToString())
                 ? string.Empty
                 : value.ToString();
         }

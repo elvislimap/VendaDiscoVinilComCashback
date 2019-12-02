@@ -1,12 +1,12 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
-using System.Text.Json;
 using System.Threading.Tasks;
-using System.Web;
 using VinylRecordSale.Domain.Commons;
 using VinylRecordSale.Domain.Enums;
+using VinylRecordSale.Domain.IntegrationValues;
 using VinylRecordSale.Domain.Interfaces.Integrations;
 
 namespace VinylRecordSale.Infra.Integrations.Spotify
@@ -25,8 +25,8 @@ namespace VinylRecordSale.Infra.Integrations.Spotify
             _configuration = configuration;
         }
 
-        
-        public async Task<dynamic> GetAlbumsByGenres(MusicGenreEnum genreEnum, int maxByGenre)
+
+        public async Task<ResponseGetAlbumSpotify> GetAlbumsByGenres(MusicGenreEnum genreEnum, int maxByGenre)
         {
             var token = await GenerateToken();
             var request = GetRequestAlbumsByGenres(genreEnum, maxByGenre, token);
@@ -39,7 +39,11 @@ namespace VinylRecordSale.Infra.Integrations.Spotify
                     return null;
 
                 var json = await response.Content.ReadAsStringAsync();
-                return JsonSerializer.Deserialize<dynamic>(json);
+                var responseGetAlbum = JsonConvert.DeserializeObject<ResponseGetAlbumSpotify>(json);
+
+                responseGetAlbum.music_genre = genreEnum;
+
+                return responseGetAlbum;
             }
         }
 
@@ -55,9 +59,9 @@ namespace VinylRecordSale.Infra.Integrations.Spotify
                     return null;
 
                 var json = await response.Content.ReadAsStringAsync();
-                var authSpotify = JsonSerializer.Deserialize<dynamic>(json);
+                var responseToken = JsonConvert.DeserializeObject<ResponseTokenSpotify>(json);
 
-                return authSpotify.access_token;
+                return responseToken.access_token;
             }
         }
 
@@ -75,22 +79,21 @@ namespace VinylRecordSale.Infra.Integrations.Spotify
                 });
 
             var request = new HttpRequestMessage(HttpMethod.Post, UriToken) { Content = content };
-            
+
             request.Headers.Add("Authorization", $"Basic {tokenBase64}");
 
             return request;
         }
 
-        private HttpRequestMessage GetRequestAlbumsByGenres(MusicGenreEnum genreEnum, int maxByGenre, string token)
+        private static HttpRequestMessage GetRequestAlbumsByGenres(MusicGenreEnum genreEnum, int maxByGenre,
+            string token)
         {
-            var uri = new UriBuilder(UriAlbums);
-            var query = HttpUtility.ParseQueryString(uri.Query);
+            var builder = new UriBuilder(UriAlbums)
+            {
+                Query = $"limit={maxByGenre.ToText()}&market=PT&seed_genres={genreEnum.GetNameMusicGenre()}"
+            };
 
-            query.Add("limit", maxByGenre.ToText());
-            query.Add("market", "PT");
-            query.Add("seed_genres", genreEnum.GetNameMusicGenre());
-
-            var request = new HttpRequestMessage(HttpMethod.Get, UriAlbums);
+            var request = new HttpRequestMessage(HttpMethod.Get, builder.Uri);
             request.Headers.Add("Authorization", $"Bearer {token}");
 
             return request;

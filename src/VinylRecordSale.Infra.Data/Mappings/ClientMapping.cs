@@ -22,22 +22,16 @@ namespace VinylRecordSale.Infra.Data.Mappings
 
         private IEnumerable<Client> GetData()
         {
-            var clients = new List<Client>();
-
-            for (int i = 0; i < 10; i++)
+            var i = 1;
+            var client = new Faker<Client>("pt_BR")
+            .CustomInstantiator(f => new Client
             {
-                var client = new Faker<Client>("pt_BR")
-                .CustomInstantiator(f => new Client
-                {
-                    ClientId = int.MinValue + i,
-                    FullName = f.Name.FullName(new Faker().PickRandom<Name.Gender>())
-                })
-                .RuleFor(c => c.Email, (f, c) => f.Internet.Email(c.FullName.ToLower()));
+                FullName = f.Name.FullName(new Faker().PickRandom<Name.Gender>())
+            })
+            .RuleFor(c => c.ClientId, f => i++)
+            .RuleFor(c => c.Email, (f, c) => f.Internet.Email(c.FullName.ToLower()));
 
-                clients.Add(client.Generate());
-            }
-
-            return clients;
+            return client.Generate(10);
         }
     }
 }
