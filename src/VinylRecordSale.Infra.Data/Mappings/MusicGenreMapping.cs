@@ -10,8 +10,8 @@ namespace VinylRecordSale.Infra.Data.Mappings
         {
             builder.HasKey(m => m.MusicGenreId);
 
-            builder.Property(m => m.MusicGenreId).HasColumnName("int");
-            builder.Property(m => m.Description).HasColumnName("varchar(50)").HasMaxLength(50).IsRequired();
+            builder.Property(m => m.MusicGenreId).HasColumnType("int");
+            builder.Property(m => m.Description).HasColumnType("varchar(50)").HasMaxLength(50).IsRequired();
 
             builder.HasData(
                 new MusicGenre { MusicGenreId = 1, Description = "Pop" },

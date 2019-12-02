@@ -7,7 +7,7 @@ namespace VinylRecordSale.Domain.Entities
         public int MusicGenreId { get; set; }
         public string Description { get; set; }
 
-        public virtual IEnumerable<ConfigCashback> ConfigCashbacks { get; set; }
-        public virtual IEnumerable<VinylDisc> VinylDiscs { get; set; }
+        public IEnumerable<ConfigCashback> ConfigCashbacks { get; set; }
+        public IEnumerable<VinylDisc> VinylDiscs { get; set; }
     }
 }

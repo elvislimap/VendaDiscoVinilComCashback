@@ -11,15 +11,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Domains", "3-Domains", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-Infras", "4-Infras", "{55640205-799F-452D-B7F1-B84B5C0905FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VinylRecordSale.Domain", "src\VinylRecordSale.Domain\VinylRecordSale.Domain.csproj", "{B0EBF06E-572B-4084-9D48-162059F0DE56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VinylRecordSale.Domain", "src\VinylRecordSale.Domain\VinylRecordSale.Domain.csproj", "{B0EBF06E-572B-4084-9D48-162059F0DE56}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra.Data", "Infra.Data", "{561F5846-A05B-4D24-90D9-66BF4BE9C688}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VinylRecordSale.Infra.Data", "src\VinylRecordSale.Infra.Data\VinylRecordSale.Infra.Data.csproj", "{9EDEB7EB-E2EC-4030-83F6-C5089D1B1162}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VinylRecordSale.Infra.Data", "src\VinylRecordSale.Infra.Data\VinylRecordSale.Infra.Data.csproj", "{9EDEB7EB-E2EC-4030-83F6-C5089D1B1162}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra.Integrations", "Infra.Integrations", "{E3481BE4-7234-4C90-8ACF-D00A3B125100}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VinylRecordSale.Infra.Integrations.Spotify", "src\VinylRecordSale.Infra.Integrations.Spotify\VinylRecordSale.Infra.Integrations.Spotify.csproj", "{18912C4B-4034-43F7-A0C2-086C0503A570}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VinylRecordSale.Infra.Integrations.Spotify", "src\VinylRecordSale.Infra.Integrations.Spotify\VinylRecordSale.Infra.Integrations.Spotify.csproj", "{18912C4B-4034-43F7-A0C2-086C0503A570}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VinylRecordSale.Service.Api", "src\VinylRecordSale.Service.Api\VinylRecordSale.Service.Api.csproj", "{3C63381B-5040-4306-B935-0EC4D67BAFF9}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{650BED02-3307-4B69-BD0E-A929BC0B0071}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra.CrossCutting", "Infra.CrossCutting", "{6C60A228-1D04-48D9-9A5D-02A7EA42404C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VinylRecordSale.Infra.CrossCutting.Ioc", "src\VinylRecordSale.Infra.CrossCutting.Ioc\VinylRecordSale.Infra.CrossCutting.Ioc.csproj", "{C93F39C7-7936-4083-9B6C-470B491EAF4E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +47,18 @@ Global
 		{18912C4B-4034-43F7-A0C2-086C0503A570}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18912C4B-4034-43F7-A0C2-086C0503A570}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18912C4B-4034-43F7-A0C2-086C0503A570}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C63381B-5040-4306-B935-0EC4D67BAFF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C63381B-5040-4306-B935-0EC4D67BAFF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C63381B-5040-4306-B935-0EC4D67BAFF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C63381B-5040-4306-B935-0EC4D67BAFF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{650BED02-3307-4B69-BD0E-A929BC0B0071}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{650BED02-3307-4B69-BD0E-A929BC0B0071}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{650BED02-3307-4B69-BD0E-A929BC0B0071}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{650BED02-3307-4B69-BD0E-A929BC0B0071}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C93F39C7-7936-4083-9B6C-470B491EAF4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C93F39C7-7936-4083-9B6C-470B491EAF4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C93F39C7-7936-4083-9B6C-470B491EAF4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C93F39C7-7936-4083-9B6C-470B491EAF4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,6 +69,9 @@ Global
 		{9EDEB7EB-E2EC-4030-83F6-C5089D1B1162} = {561F5846-A05B-4D24-90D9-66BF4BE9C688}
 		{E3481BE4-7234-4C90-8ACF-D00A3B125100} = {55640205-799F-452D-B7F1-B84B5C0905FC}
 		{18912C4B-4034-43F7-A0C2-086C0503A570} = {E3481BE4-7234-4C90-8ACF-D00A3B125100}
+		{3C63381B-5040-4306-B935-0EC4D67BAFF9} = {4E7420B1-2791-4DB1-BAC8-038509251F31}
+		{6C60A228-1D04-48D9-9A5D-02A7EA42404C} = {55640205-799F-452D-B7F1-B84B5C0905FC}
+		{C93F39C7-7936-4083-9B6C-470B491EAF4E} = {6C60A228-1D04-48D9-9A5D-02A7EA42404C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {886AAACA-9513-43B4-AB83-F55D7608F0C7}

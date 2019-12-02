@@ -8,6 +8,6 @@ namespace VinylRecordSale.Domain.Entities
         public string FullName { get; set; }
         public string Email { get; set; }
 
-        public virtual IEnumerable<Sale> Sales { get; set; }
+        public IEnumerable<Sale> Sales { get; set; }
     }
 }

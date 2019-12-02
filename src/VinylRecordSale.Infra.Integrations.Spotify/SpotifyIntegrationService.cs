@@ -66,6 +66,7 @@ namespace VinylRecordSale.Infra.Integrations.Spotify
             var spotifyConfig = _configuration.GetSection("SpotifyConfig");
             var clientId = spotifyConfig.GetSection("ClientId").Value;
             var clientSecret = spotifyConfig.GetSection("ClientSecret").Value;
+            var tokenBase64 = $"{clientId}:{clientSecret}".ToBase64();
 
             var content = new FormUrlEncodedContent(new List<KeyValuePair<string, string>>
                 {
@@ -74,9 +75,8 @@ namespace VinylRecordSale.Infra.Integrations.Spotify
                 });
 
             var request = new HttpRequestMessage(HttpMethod.Post, UriToken) { Content = content };
-
-            request.Headers.Add("Content-Type", "application/x-www-form-urlencoded");
-            request.Headers.Add("Authorization", $"Basic {clientId}:{clientSecret}".ToBase64());
+            
+            request.Headers.Add("Authorization", $"Basic {tokenBase64}");
 
             return request;
         }

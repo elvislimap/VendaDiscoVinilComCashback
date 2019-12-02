@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  vinylrecordsale.service.api:
+    image: ${DOCKER_REGISTRY-}vinylrecordsaleserviceapi
+    build:
+      context: .
+      dockerfile: src/VinylRecordSale.Service.Api/Dockerfile

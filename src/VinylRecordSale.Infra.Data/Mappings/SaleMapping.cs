@@ -9,14 +9,14 @@ namespace VinylRecordSale.Infra.Data.Mappings
         public void Configure(EntityTypeBuilder<Sale> builder)
         {
             builder.HasKey(s => s.SaleId);
-            builder.Property(s => s.SaleId).HasColumnName("int").ValueGeneratedOnAdd();
+            builder.Property(s => s.SaleId).HasColumnType("int").ValueGeneratedOnAdd();
 
             builder.HasOne(s => s.Client).WithMany(c => c.Sales);
 
-            builder.Property(s => s.ClientId).HasColumnName("int").IsRequired();
-            builder.Property(s => s.TotalValue).HasColumnName("decimal(10,2)").IsRequired();
-            builder.Property(s => s.CashbackTotal).HasColumnName("decimal(10,2)").IsRequired();
-            builder.Property(s => s.Date).HasColumnName("datetime").IsRequired();
+            builder.Property(s => s.ClientId).HasColumnType("int").IsRequired();
+            builder.Property(s => s.TotalValue).HasColumnType("decimal(10,2)").IsRequired();
+            builder.Property(s => s.CashbackTotal).HasColumnType("decimal(10,2)").IsRequired();
+            builder.Property(s => s.Date).HasColumnType("datetime").IsRequired();
         }
     }
 }

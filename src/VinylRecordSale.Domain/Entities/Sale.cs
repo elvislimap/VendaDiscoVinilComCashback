@@ -11,7 +11,7 @@ namespace VinylRecordSale.Domain.Entities
         public decimal CashbackTotal { get; set; }
         public DateTime Date { get; set; }
 
-        public virtual Client Client { get; set; }
-        public virtual IEnumerable<ItemSale> ItemSales { get; set; }
+        public Client Client { get; set; }
+        public IEnumerable<ItemSale> ItemSales { get; set; }
     }
 }

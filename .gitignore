@@ -1,7 +1,13 @@
 ﻿.vs
+/bin
+/obj
 /src/VinylRecordSale.Domain/bin
 /src/VinylRecordSale.Domain/obj
 /src/VinylRecordSale.Infra.Data/bin
 /src/VinylRecordSale.Infra.Data/obj
 /src/VinylRecordSale.Infra.Integrations.Spotify/bin
 /src/VinylRecordSale.Infra.Integrations.Spotify/obj
+/src/VinylRecordSale.Service.Api/bin
+/src/VinylRecordSale.Service.Api/obj
+/src/VinylRecordSale.Infra.CrossCutting.Ioc/bin
+/src/VinylRecordSale.Infra.CrossCutting.Ioc/obj

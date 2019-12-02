@@ -9,7 +9,7 @@ namespace VinylRecordSale.Domain.Entities
         public string Name { get; set; }
         public decimal Value { get; set; }
 
-        public virtual MusicGenre MusicGenre { get; set; }
-        public virtual IEnumerable<ItemSale> ItemSales { get; set; }
+        public MusicGenre MusicGenre { get; set; }
+        public IEnumerable<ItemSale> ItemSales { get; set; }
     }
 }

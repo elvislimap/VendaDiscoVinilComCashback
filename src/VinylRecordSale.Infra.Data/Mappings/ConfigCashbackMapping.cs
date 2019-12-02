@@ -9,19 +9,17 @@ namespace VinylRecordSale.Infra.Data.Mappings
     {
         public void Configure(EntityTypeBuilder<ConfigCashback> builder)
         {
-            builder.HasKey(c => c.ConfigCashbackId);
-            builder.Property(c => c.ConfigCashbackId).HasColumnName("int").ValueGeneratedOnAdd();
-
+            builder.HasKey(c => c.GenreId);
             builder.HasOne(c => c.MusicGenre).WithMany(g => g.ConfigCashbacks);
 
-            builder.Property(c => c.GenreId).HasColumnName("int").IsRequired();
-            builder.Property(c => c.PercentageSunday).HasColumnName("decimal(10,2)").HasDefaultValue(0M).IsRequired();
-            builder.Property(c => c.PercentageMonday).HasColumnName("decimal(10,2)").HasDefaultValue(0M).IsRequired();
-            builder.Property(c => c.PercentageTuesday).HasColumnName("decimal(10,2)").HasDefaultValue(0M).IsRequired();
-            builder.Property(c => c.PercentageWednesday).HasColumnName("decimal(10,2)").HasDefaultValue(0M).IsRequired();
-            builder.Property(c => c.PercentageThursday).HasColumnName("decimal(10,2)").HasDefaultValue(0M).IsRequired();
-            builder.Property(c => c.PercentageFriday).HasColumnName("decimal(10,2)").HasDefaultValue(0M).IsRequired();
-            builder.Property(c => c.PercentageSaturday).HasColumnName("decimal(10,2)").HasDefaultValue(0M).IsRequired();
+            builder.Property(c => c.GenreId).HasColumnType("int").IsRequired();
+            builder.Property(c => c.PercentageSunday).HasColumnType("decimal(10,2)").HasDefaultValue(0M).IsRequired();
+            builder.Property(c => c.PercentageMonday).HasColumnType("decimal(10,2)").HasDefaultValue(0M).IsRequired();
+            builder.Property(c => c.PercentageTuesday).HasColumnType("decimal(10,2)").HasDefaultValue(0M).IsRequired();
+            builder.Property(c => c.PercentageWednesday).HasColumnType("decimal(10,2)").HasDefaultValue(0M).IsRequired();
+            builder.Property(c => c.PercentageThursday).HasColumnType("decimal(10,2)").HasDefaultValue(0M).IsRequired();
+            builder.Property(c => c.PercentageFriday).HasColumnType("decimal(10,2)").HasDefaultValue(0M).IsRequired();
+            builder.Property(c => c.PercentageSaturday).HasColumnType("decimal(10,2)").HasDefaultValue(0M).IsRequired();
 
             builder.HasData(
                 new ConfigCashback

@@ -9,7 +9,7 @@
         public decimal Value { get; set; }
         public decimal Cashback { get; set; }
 
-        public virtual Sale Sale { get; set; }
-        public virtual VinylDisc VinylDisc { get; set; }
+        public Sale Sale { get; set; }
+        public VinylDisc VinylDisc { get; set; }
     }
 }

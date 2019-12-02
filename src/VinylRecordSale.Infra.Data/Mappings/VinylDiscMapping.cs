@@ -11,51 +11,28 @@ namespace VinylRecordSale.Infra.Data.Mappings
 {
     public class VinylDiscMapping : IEntityTypeConfiguration<VinylDisc>
     {
-        private readonly ISpotifyIntegrationService _spotifyIntegrationService;
+        private readonly IEnumerable<VinylDisc> _vinylDiscs;
 
-        public VinylDiscMapping(ISpotifyIntegrationService spotifyIntegrationService)
+        public VinylDiscMapping(IEnumerable<VinylDisc> vinylDiscs)
         {
-            _spotifyIntegrationService = spotifyIntegrationService;
+            _vinylDiscs = vinylDiscs;
         }
 
 
-        public async void Configure(EntityTypeBuilder<VinylDisc> builder)
+        public void Configure(EntityTypeBuilder<VinylDisc> builder)
         {
             builder.HasKey(v => v.VinylDiscId);
-            builder.Property(v => v.VinylDiscId).HasColumnName("int").ValueGeneratedOnAdd();
+            builder.Property(v => v.VinylDiscId).HasColumnType("int").ValueGeneratedOnAdd();
 
             builder.HasOne(v => v.MusicGenre).WithMany(g => g.VinylDiscs);
 
-            builder.Property(v => v.GenreId).HasColumnName("int").IsRequired();
-            builder.Property(v => v.Name).HasColumnName("varchar(200)").HasMaxLength(200).IsRequired();
-            builder.Property(v => v.Value).HasColumnName("decimal(10,2)").IsRequired();
+            builder.Property(v => v.GenreId).HasColumnType("int").IsRequired();
+            builder.Property(v => v.Name).HasColumnType("varchar(200)").HasMaxLength(200).IsRequired();
+            builder.Property(v => v.Value).HasColumnType("decimal(10,2)").IsRequired();
 
-            builder.HasData(await GetData(MusicGenreEnum.Pop));
-            builder.HasData(await GetData(MusicGenreEnum.Mpb));
-            builder.HasData(await GetData(MusicGenreEnum.Classic));
-            builder.HasData(await GetData(MusicGenreEnum.Rock));
+            builder.HasData(_vinylDiscs);
         }
 
-        private async Task<IEnumerable<VinylDisc>> GetData(MusicGenreEnum genreEnum)
-        {
-            var vinylDiscs = new List<VinylDisc>();
-            var albums = await _spotifyIntegrationService.GetAlbumsByGenres(genreEnum, 50);
-
-            if (albums == null)
-                return vinylDiscs;
-
-            foreach (var item in albums.tracks)
-            {
-                vinylDiscs.Add(
-                    new VinylDisc
-                    {
-                        GenreId = (int)MusicGenreEnum.Pop,
-                        Name = item.album.name,
-                        Value = Randoms.Decimal(10.9, 99.9)
-                    });
-            }
-
-            return vinylDiscs;
-        }
+        
     }
 }
