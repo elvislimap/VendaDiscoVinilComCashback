@@ -1,6 +1,7 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
-
-.vs
+﻿.vs
 /src/VinylRecordSale.Domain/bin
+/src/VinylRecordSale.Domain/obj
+/src/VinylRecordSale.Infra.Data/bin
+/src/VinylRecordSale.Infra.Data/obj
+/src/VinylRecordSale.Infra.Integrations.Spotify/bin
+/src/VinylRecordSale.Infra.Integrations.Spotify/obj

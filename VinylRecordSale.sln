@@ -11,9 +11,44 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Domains", "3-Domains", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-Infras", "4-Infras", "{55640205-799F-452D-B7F1-B84B5C0905FC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VinylRecordSale.Domain", "src\VinylRecordSale.Domain\VinylRecordSale.Domain.csproj", "{B0EBF06E-572B-4084-9D48-162059F0DE56}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra.Data", "Infra.Data", "{561F5846-A05B-4D24-90D9-66BF4BE9C688}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VinylRecordSale.Infra.Data", "src\VinylRecordSale.Infra.Data\VinylRecordSale.Infra.Data.csproj", "{9EDEB7EB-E2EC-4030-83F6-C5089D1B1162}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra.Integrations", "Infra.Integrations", "{E3481BE4-7234-4C90-8ACF-D00A3B125100}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VinylRecordSale.Infra.Integrations.Spotify", "src\VinylRecordSale.Infra.Integrations.Spotify\VinylRecordSale.Infra.Integrations.Spotify.csproj", "{18912C4B-4034-43F7-A0C2-086C0503A570}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0EBF06E-572B-4084-9D48-162059F0DE56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0EBF06E-572B-4084-9D48-162059F0DE56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0EBF06E-572B-4084-9D48-162059F0DE56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0EBF06E-572B-4084-9D48-162059F0DE56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EDEB7EB-E2EC-4030-83F6-C5089D1B1162}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EDEB7EB-E2EC-4030-83F6-C5089D1B1162}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EDEB7EB-E2EC-4030-83F6-C5089D1B1162}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EDEB7EB-E2EC-4030-83F6-C5089D1B1162}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18912C4B-4034-43F7-A0C2-086C0503A570}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18912C4B-4034-43F7-A0C2-086C0503A570}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18912C4B-4034-43F7-A0C2-086C0503A570}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18912C4B-4034-43F7-A0C2-086C0503A570}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B0EBF06E-572B-4084-9D48-162059F0DE56} = {552D2D5B-5F30-43E7-A18F-F4FB152ED274}
+		{561F5846-A05B-4D24-90D9-66BF4BE9C688} = {55640205-799F-452D-B7F1-B84B5C0905FC}
+		{9EDEB7EB-E2EC-4030-83F6-C5089D1B1162} = {561F5846-A05B-4D24-90D9-66BF4BE9C688}
+		{E3481BE4-7234-4C90-8ACF-D00A3B125100} = {55640205-799F-452D-B7F1-B84B5C0905FC}
+		{18912C4B-4034-43F7-A0C2-086C0503A570} = {E3481BE4-7234-4C90-8ACF-D00A3B125100}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {886AAACA-9513-43B4-AB83-F55D7608F0C7}
