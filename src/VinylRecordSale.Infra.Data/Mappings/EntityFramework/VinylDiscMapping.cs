@@ -1,15 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using VinylRecordSale.Domain.Commons;
 using VinylRecordSale.Domain.Entities;
 using VinylRecordSale.Domain.Enums;
 using VinylRecordSale.Domain.IntegrationValues;
 using VinylRecordSale.Domain.Interfaces.Integrations;
 
-namespace VinylRecordSale.Infra.Data.Mappings
+namespace VinylRecordSale.Infra.Data.Mappings.EntityFramework
 {
     public class VinylDiscMapping : IEntityTypeConfiguration<VinylDisc>
     {
@@ -43,7 +43,7 @@ namespace VinylRecordSale.Infra.Data.Mappings
             var albums = GetResponseAlbum(50);
             var discs = new List<VinylDisc>();
 
-            if (albums == null || !albums.Any())
+            if (albums == null || !Enumerable.Any<ResponseGetAlbumSpotify>(albums))
                 return discs;
 
             var i = 1;

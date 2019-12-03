@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using VinylRecordSale.Domain.Entities;
 using VinylRecordSale.Domain.Enums;
 
-namespace VinylRecordSale.Infra.Data.Mappings
+namespace VinylRecordSale.Infra.Data.Mappings.EntityFramework
 {
     public class ConfigCashbackMapping : IEntityTypeConfiguration<ConfigCashback>
     {

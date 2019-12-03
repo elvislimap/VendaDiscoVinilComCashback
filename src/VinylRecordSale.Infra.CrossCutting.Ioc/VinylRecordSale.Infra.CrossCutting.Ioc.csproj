@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\VinylRecordSale.Domain\VinylRecordSale.Domain.csproj" />
+    <ProjectReference Include="..\VinylRecordSale.Infra.Data\VinylRecordSale.Infra.Data.csproj" />
     <ProjectReference Include="..\VinylRecordSale.Infra.Integrations.Spotify\VinylRecordSale.Infra.Integrations.Spotify.csproj" />
   </ItemGroup>
 

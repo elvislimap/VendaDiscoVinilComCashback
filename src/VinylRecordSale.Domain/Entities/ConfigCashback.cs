@@ -1,5 +1,4 @@
-﻿using FluentValidation.Results;
-using VinylRecordSale.Domain.Validations;
+﻿using VinylRecordSale.Domain.Validations;
 
 namespace VinylRecordSale.Domain.Entities
 {

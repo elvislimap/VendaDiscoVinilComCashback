@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using VinylRecordSale.Domain.Entities;
 
-namespace VinylRecordSale.Infra.Data.Mappings
+namespace VinylRecordSale.Infra.Data.Mappings.EntityFramework
 {
     public class ItemSaleMapping : IEntityTypeConfiguration<ItemSale>
     {

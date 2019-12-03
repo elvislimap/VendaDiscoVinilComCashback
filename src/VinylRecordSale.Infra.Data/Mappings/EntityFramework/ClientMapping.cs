@@ -1,10 +1,10 @@
-﻿using Bogus;
+﻿using System.Collections.Generic;
+using Bogus;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System.Collections.Generic;
 using VinylRecordSale.Domain.Entities;
 
-namespace VinylRecordSale.Infra.Data.Mappings
+namespace VinylRecordSale.Infra.Data.Mappings.EntityFramework
 {
     public class ClientMapping : IEntityTypeConfiguration<Client>
     {

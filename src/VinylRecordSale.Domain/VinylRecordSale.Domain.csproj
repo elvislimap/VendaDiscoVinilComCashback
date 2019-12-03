@@ -8,4 +8,8 @@
     <PackageReference Include="FluentValidation" Version="8.5.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Interfaces\Repositories\EntityFramework\" />
+  </ItemGroup>
+
 </Project>

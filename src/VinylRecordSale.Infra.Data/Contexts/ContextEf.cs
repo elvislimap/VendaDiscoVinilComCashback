@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using VinylRecordSale.Domain.Entities;
 using VinylRecordSale.Domain.Interfaces.Integrations;
-using VinylRecordSale.Infra.Data.Mappings;
+using VinylRecordSale.Infra.Data.Mappings.EntityFramework;
 
 namespace VinylRecordSale.Infra.Data.Contexts
 {
