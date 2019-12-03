@@ -1,5 +1,4 @@
 ﻿using Bogus;
-using Bogus.DataSets;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System.Collections.Generic;
@@ -11,11 +10,13 @@ namespace VinylRecordSale.Infra.Data.Mappings
     {
         public void Configure(EntityTypeBuilder<Client> builder)
         {
-            builder.HasKey(m => m.ClientId);
-            builder.Property(m => m.ClientId).HasColumnType("int").ValueGeneratedOnAdd();
+            builder.HasKey(c => c.ClientId);
+            builder.Property(c => c.ClientId).HasColumnType("int").ValueGeneratedOnAdd();
 
-            builder.Property(m => m.FullName).HasColumnType("varchar(100)").HasMaxLength(100).IsRequired();
-            builder.Property(m => m.Email).HasColumnType("varchar(100)").HasMaxLength(100).IsRequired();
+            builder.Property(c => c.FullName).HasColumnType("varchar(100)").HasMaxLength(100).IsRequired();
+            builder.Property(c => c.Email).HasColumnType("varchar(100)").HasMaxLength(100).IsRequired();
+
+            builder.Ignore(c => c.ValidationResult);
 
             builder.HasData(GetData());
         }
@@ -24,11 +25,9 @@ namespace VinylRecordSale.Infra.Data.Mappings
         {
             var i = 1;
             var client = new Faker<Client>("pt_BR")
-            .CustomInstantiator(f => new Client
-            {
-                FullName = f.Name.FullName(new Faker().PickRandom<Name.Gender>())
-            })
+            .CustomInstantiator(f => new Client())
             .RuleFor(c => c.ClientId, f => i++)
+            .RuleFor(c => c.FullName, (f, c) => f.Name.FullName())
             .RuleFor(c => c.Email, (f, c) => f.Internet.Email(c.FullName.ToLower()));
 
             return client.Generate(10);

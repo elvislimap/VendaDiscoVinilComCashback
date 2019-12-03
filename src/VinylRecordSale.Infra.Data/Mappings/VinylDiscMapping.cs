@@ -32,6 +32,8 @@ namespace VinylRecordSale.Infra.Data.Mappings
             builder.Property(v => v.Name).HasColumnType("varchar(200)").HasMaxLength(200).IsRequired();
             builder.Property(v => v.Value).HasColumnType("decimal(10,2)").IsRequired();
 
+            builder.Ignore(v => v.ValidationResult);
+
             builder.HasData(GetVinylDiscs());
         }
 
@@ -49,12 +51,7 @@ namespace VinylRecordSale.Infra.Data.Mappings
             discs.AddRange(from album in albums
                            from track in album.tracks
                            select new VinylDisc
-                           {
-                               VinylDiscId = i++,
-                               MusicGenreId = (int)album.music_genre,
-                               Name = track.album.name,
-                               Value = Randoms.Decimal(10.9, 99.9)
-                           });
+                           (i++, (int)album.music_genre, track.album.name, Randoms.Decimal(10.9, 99.9)));
 
             return discs;
         }

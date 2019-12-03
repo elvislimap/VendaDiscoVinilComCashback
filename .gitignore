@@ -11,3 +11,5 @@
 /src/VinylRecordSale.Service.Api/obj
 /src/VinylRecordSale.Infra.CrossCutting.Ioc/bin
 /src/VinylRecordSale.Infra.CrossCutting.Ioc/obj
+/tests/VinylRecordSale.Domain.Tests/bin
+/tests/VinylRecordSale.Domain.Tests/obj

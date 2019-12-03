@@ -13,11 +13,13 @@ namespace VinylRecordSale.Infra.Data.Mappings
             builder.Property(m => m.MusicGenreId).HasColumnType("int");
             builder.Property(m => m.Description).HasColumnType("varchar(50)").HasMaxLength(50).IsRequired();
 
+            builder.Ignore(m => m.ValidationResult);
+
             builder.HasData(
-                new MusicGenre { MusicGenreId = 1, Description = "Pop" },
-                new MusicGenre { MusicGenreId = 2, Description = "Mpb" },
-                new MusicGenre { MusicGenreId = 3, Description = "Classic" },
-                new MusicGenre { MusicGenreId = 4, Description = "Rock" });
+                new MusicGenre(1, "Pop"),
+                new MusicGenre(2, "Mpb"),
+                new MusicGenre(3, "Classic"),
+                new MusicGenre(4, "Rock"));
         }
     }
 }

@@ -21,13 +21,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra.Integrations", "Infra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VinylRecordSale.Infra.Integrations.Spotify", "src\VinylRecordSale.Infra.Integrations.Spotify\VinylRecordSale.Infra.Integrations.Spotify.csproj", "{18912C4B-4034-43F7-A0C2-086C0503A570}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VinylRecordSale.Service.Api", "src\VinylRecordSale.Service.Api\VinylRecordSale.Service.Api.csproj", "{3C63381B-5040-4306-B935-0EC4D67BAFF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VinylRecordSale.Service.Api", "src\VinylRecordSale.Service.Api\VinylRecordSale.Service.Api.csproj", "{3C63381B-5040-4306-B935-0EC4D67BAFF9}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{650BED02-3307-4B69-BD0E-A929BC0B0071}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra.CrossCutting", "Infra.CrossCutting", "{6C60A228-1D04-48D9-9A5D-02A7EA42404C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VinylRecordSale.Infra.CrossCutting.Ioc", "src\VinylRecordSale.Infra.CrossCutting.Ioc\VinylRecordSale.Infra.CrossCutting.Ioc.csproj", "{C93F39C7-7936-4083-9B6C-470B491EAF4E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VinylRecordSale.Infra.CrossCutting.Ioc", "src\VinylRecordSale.Infra.CrossCutting.Ioc\VinylRecordSale.Infra.CrossCutting.Ioc.csproj", "{C93F39C7-7936-4083-9B6C-470B491EAF4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VinylRecordSale.Domain.Tests", "tests\VinylRecordSale.Domain.Tests\VinylRecordSale.Domain.Tests.csproj", "{F6F55DFE-17E5-4D11-AC50-7CA3E3337057}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{C93F39C7-7936-4083-9B6C-470B491EAF4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C93F39C7-7936-4083-9B6C-470B491EAF4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C93F39C7-7936-4083-9B6C-470B491EAF4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6F55DFE-17E5-4D11-AC50-7CA3E3337057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6F55DFE-17E5-4D11-AC50-7CA3E3337057}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6F55DFE-17E5-4D11-AC50-7CA3E3337057}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6F55DFE-17E5-4D11-AC50-7CA3E3337057}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,6 +78,7 @@ Global
 		{3C63381B-5040-4306-B935-0EC4D67BAFF9} = {4E7420B1-2791-4DB1-BAC8-038509251F31}
 		{6C60A228-1D04-48D9-9A5D-02A7EA42404C} = {55640205-799F-452D-B7F1-B84B5C0905FC}
 		{C93F39C7-7936-4083-9B6C-470B491EAF4E} = {6C60A228-1D04-48D9-9A5D-02A7EA42404C}
+		{F6F55DFE-17E5-4D11-AC50-7CA3E3337057} = {552D2D5B-5F30-43E7-A18F-F4FB152ED274}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {886AAACA-9513-43B4-AB83-F55D7608F0C7}

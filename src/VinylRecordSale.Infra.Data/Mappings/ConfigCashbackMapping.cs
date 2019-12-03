@@ -20,51 +20,13 @@ namespace VinylRecordSale.Infra.Data.Mappings
             builder.Property(c => c.PercentageFriday).HasColumnType("decimal(10,2)").HasDefaultValue(0M).IsRequired();
             builder.Property(c => c.PercentageSaturday).HasColumnType("decimal(10,2)").HasDefaultValue(0M).IsRequired();
 
+            builder.Ignore(c => c.ValidationResult);
+
             builder.HasData(
-                new ConfigCashback
-                {
-                    MusicGenreId = (int)MusicGenreEnum.Pop,
-                    PercentageSunday = 25,
-                    PercentageMonday = 7,
-                    PercentageTuesday = 6,
-                    PercentageWednesday = 2,
-                    PercentageThursday = 10,
-                    PercentageFriday = 15,
-                    PercentageSaturday = 20
-                },
-                new ConfigCashback
-                {
-                    MusicGenreId = (int)MusicGenreEnum.Mpb,
-                    PercentageSunday = 30,
-                    PercentageMonday = 5,
-                    PercentageTuesday = 10,
-                    PercentageWednesday = 15,
-                    PercentageThursday = 20,
-                    PercentageFriday = 25,
-                    PercentageSaturday = 30
-                },
-                new ConfigCashback
-                {
-                    MusicGenreId = (int)MusicGenreEnum.Classic,
-                    PercentageSunday = 35,
-                    PercentageMonday = 3,
-                    PercentageTuesday = 5,
-                    PercentageWednesday = 8,
-                    PercentageThursday = 13,
-                    PercentageFriday = 18,
-                    PercentageSaturday = 25
-                },
-                new ConfigCashback
-                {
-                    MusicGenreId = (int)MusicGenreEnum.Rock,
-                    PercentageSunday = 40,
-                    PercentageMonday = 10,
-                    PercentageTuesday = 15,
-                    PercentageWednesday = 15,
-                    PercentageThursday = 15,
-                    PercentageFriday = 20,
-                    PercentageSaturday = 40
-                });
+                new ConfigCashback((int)MusicGenreEnum.Pop, 25, 7, 6, 2, 10, 15, 20),
+                new ConfigCashback((int)MusicGenreEnum.Mpb, 30, 5, 10, 15, 20, 25, 30),
+                new ConfigCashback((int)MusicGenreEnum.Classic, 35, 3, 5, 8, 13, 18, 25),
+                new ConfigCashback((int)MusicGenreEnum.Rock, 40, 10, 15, 15, 15, 20, 40));
         }
     }
 }
