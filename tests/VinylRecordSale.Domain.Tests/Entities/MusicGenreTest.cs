@@ -40,14 +40,14 @@ namespace VinylRecordSale.Domain.Tests.Entities
         private static MusicGenre GetMusicGenreValid()
         {
             return new Faker<MusicGenre>()
-                .RuleFor(m => m.Description, (f, m) => f.Lorem.Letter(50))
+                .CustomInstantiator(f => new MusicGenre(0, f.Lorem.Letter(50)))
                 .Generate();
         }
 
         private static MusicGenre GetMusicGenreInvalid()
         {
             return new Faker<MusicGenre>()
-                .RuleFor(m => m.Description, (f, m) => f.Lorem.Letter(51))
+                .CustomInstantiator(f => new MusicGenre(0, f.Lorem.Letter(51)))
                 .Generate();
         }
     }

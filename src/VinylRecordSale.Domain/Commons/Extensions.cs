@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FluentValidation.Results;
+using System;
+using System.Collections.Generic;
 using System.Text;
 using VinylRecordSale.Domain.Enums;
 
@@ -42,6 +44,11 @@ namespace VinylRecordSale.Domain.Commons
             }
 
             return genre;
+        }
+
+        public static ValidationResult ToValidationResult(this ValidationFailure validationFailure)
+        {
+            return new ValidationResult(new List<ValidationFailure> { validationFailure });
         }
     }
 }

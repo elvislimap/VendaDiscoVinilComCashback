@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
-using Bogus;
+﻿using Bogus;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System.Collections.Generic;
+using VinylRecordSale.Domain.Commons;
 using VinylRecordSale.Domain.Entities;
 
 namespace VinylRecordSale.Infra.Data.Mappings.EntityFramework
@@ -21,16 +22,23 @@ namespace VinylRecordSale.Infra.Data.Mappings.EntityFramework
             builder.HasData(GetData());
         }
 
-        private IEnumerable<Client> GetData()
+        private static IEnumerable<Client> GetData()
         {
-            var i = 1;
-            var client = new Faker<Client>("pt_BR")
-            .CustomInstantiator(f => new Client())
-            .RuleFor(c => c.ClientId, f => i++)
-            .RuleFor(c => c.FullName, (f, c) => f.Name.FullName())
-            .RuleFor(c => c.Email, (f, c) => f.Internet.Email(c.FullName.ToLower()));
+            var clients = new List<Client>();
 
-            return client.Generate(10);
+            for (var i = 1; i <= 10; i++)
+            {
+                var client = new Faker<Client>(Constants.LanguageBogus)
+                    .CustomInstantiator(f => new Client(0, f.Name.FullName(), null))
+                    .Generate();
+
+                clients.Add(new Faker<Client>(Constants.LanguageBogus)
+                    .CustomInstantiator(f =>
+                        new Client(i, client.FullName, f.Internet.Email(client.FullName.ToLower())))
+                    .Generate());
+            }
+
+            return clients;
         }
     }
 }

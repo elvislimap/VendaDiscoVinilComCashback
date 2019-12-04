@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using VinylRecordSale.Domain.Validations;
 
 namespace VinylRecordSale.Domain.Entities
@@ -19,14 +18,13 @@ namespace VinylRecordSale.Domain.Entities
             Date = date;
         }
 
-        public int SaleId { get; private set; }
-        public int ClientId { get; private set; }
-        public decimal TotalValue { get; private set; }
-        public decimal CashbackTotal { get; private set; }
-        public DateTime Date { get; private set; }
-
-        public virtual Client Client { get; private set; }
-        public virtual IList<ItemSale> ItemSales { get; private set; }
+        public int SaleId { get; set; }
+        public int ClientId { get; set; }
+        public decimal TotalValue { get; set; }
+        public decimal CashbackTotal { get; set; }
+        public DateTime Date { get; set; }
+        public virtual Client Client { get; set; }
+        public virtual IList<ItemSale> ItemSales { get; set; }
 
         public override bool IsValid()
         {
@@ -34,15 +32,14 @@ namespace VinylRecordSale.Domain.Entities
             return ValidationResult.IsValid;
         }
 
-        public void AddItemSales(IList<ItemSale> itemSales)
-        {
-            ItemSales = itemSales;
-        }
-
         public void AddItemSale(ItemSale itemSale)
         {
-            ItemSales = ItemSales ?? new List<ItemSale>();
             ItemSales.Add(itemSale);
+        }
+
+        public void SetDateNow()
+        {
+            Date = DateTime.Now;
         }
     }
 }

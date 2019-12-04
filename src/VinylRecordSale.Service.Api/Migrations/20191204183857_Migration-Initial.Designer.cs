@@ -10,7 +10,7 @@ using VinylRecordSale.Infra.Data.Contexts;
 namespace VinylRecordSale.Service.Api.Migrations
 {
     [DbContext(typeof(ContextEf))]
-    [Migration("20191203030918_Migration-Initial")]
+    [Migration("20191204183857_Migration-Initial")]
     partial class MigrationInitial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -18,7 +18,7 @@ namespace VinylRecordSale.Service.Api.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasDefaultSchema("VinylRecordSale")
-                .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
+                .HasAnnotation("ProductVersion", "2.2.4-servicing-10062")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -47,62 +47,62 @@ namespace VinylRecordSale.Service.Api.Migrations
                         new
                         {
                             ClientId = 1,
-                            Email = "ricardobarros_Pereira@live.com",
-                            FullName = "Ricardo Barros"
+                            Email = "eduardasantos78@gmail.com",
+                            FullName = "Eduarda Santos"
                         },
                         new
                         {
                             ClientId = 2,
-                            Email = "yurimoraes.Batista23@bol.com.br",
-                            FullName = "Yuri Moraes"
+                            Email = "alexandremoraes.Silva@gmail.com",
+                            FullName = "Alexandre Moraes"
                         },
                         new
                         {
                             ClientId = 3,
-                            Email = "estherbraga.Saraiva64@hotmail.com",
-                            FullName = "Esther Braga"
+                            Email = "fabioalbuquerque_Reis@hotmail.com",
+                            FullName = "Fábio Albuquerque"
                         },
                         new
                         {
                             ClientId = 4,
-                            Email = "merciaoliveira_Melo@yahoo.com",
-                            FullName = "Mércia Oliveira"
+                            Email = "ceciliasaraiva.Moreira75@bol.com.br",
+                            FullName = "Cecília Saraiva"
                         },
                         new
                         {
                             ClientId = 5,
-                            Email = "marcelobatista_Moraes45@yahoo.com",
-                            FullName = "Marcelo Batista"
+                            Email = "igorbraga77@bol.com.br",
+                            FullName = "Ígor Braga"
                         },
                         new
                         {
                             ClientId = 6,
-                            Email = "eduardobraga.Reis@yahoo.com",
-                            FullName = "Eduardo Braga"
+                            Email = "margaridabarros.Braga14@live.com",
+                            FullName = "Margarida Barros"
                         },
                         new
                         {
                             ClientId = 7,
-                            Email = "alessandrareis16@gmail.com",
-                            FullName = "Alessandra Reis"
+                            Email = "saramoraes.Xavier@hotmail.com",
+                            FullName = "Sara Moraes"
                         },
                         new
                         {
                             ClientId = 8,
-                            Email = "suelensilva55@live.com",
-                            FullName = "Suélen Silva"
+                            Email = "gubiobraga_Macedo@bol.com.br",
+                            FullName = "Gúbio Braga"
                         },
                         new
                         {
                             ClientId = 9,
-                            Email = "ceciliacarvalho.Xavier97@gmail.com",
-                            FullName = "Cecília Carvalho"
+                            Email = "dalilamoreira26@gmail.com",
+                            FullName = "Dalila Moreira"
                         },
                         new
                         {
                             ClientId = 10,
-                            Email = "brenomartins42@yahoo.com",
-                            FullName = "Breno Martins"
+                            Email = "eduardamelo.Martins@hotmail.com",
+                            FullName = "Eduarda Melo"
                         });
                 });
 
@@ -324,1401 +324,1401 @@ namespace VinylRecordSale.Service.Api.Migrations
                         {
                             VinylDiscId = 1,
                             MusicGenreId = 1,
-                            Name = "Still Got Time",
-                            Value = 50.63m
+                            Name = "Origins (Deluxe)",
+                            Value = 70.36m
                         },
                         new
                         {
                             VinylDiscId = 2,
                             MusicGenreId = 1,
-                            Name = "ANTI (Deluxe)",
-                            Value = 30.65m
+                            Name = "÷ (Deluxe)",
+                            Value = 58.20m
                         },
                         new
                         {
                             VinylDiscId = 3,
                             MusicGenreId = 1,
-                            Name = "Playboi Carti",
-                            Value = 34.50m
+                            Name = "PARTYNEXTDOOR TWO",
+                            Value = 14.43m
                         },
                         new
                         {
                             VinylDiscId = 4,
                             MusicGenreId = 1,
-                            Name = "Savage Mode",
-                            Value = 30.90m
+                            Name = "Starboy",
+                            Value = 82.21m
                         },
                         new
                         {
                             VinylDiscId = 5,
                             MusicGenreId = 1,
-                            Name = "Blank Face LP",
-                            Value = 86.24m
+                            Name = "Made In The A.M. (Deluxe Edition)",
+                            Value = 80.98m
                         },
                         new
                         {
                             VinylDiscId = 6,
                             MusicGenreId = 1,
-                            Name = "True",
-                            Value = 87.62m
+                            Name = "Light of Mine",
+                            Value = 93.68m
                         },
                         new
                         {
                             VinylDiscId = 7,
                             MusicGenreId = 1,
-                            Name = "More Life",
-                            Value = 38.71m
+                            Name = "Free TC",
+                            Value = 56.16m
                         },
                         new
                         {
                             VinylDiscId = 8,
                             MusicGenreId = 1,
-                            Name = "Only You (with Little Mix)",
-                            Value = 70.38m
+                            Name = "This Is A Challenge",
+                            Value = 81.25m
                         },
                         new
                         {
                             VinylDiscId = 9,
                             MusicGenreId = 1,
-                            Name = "Culture",
-                            Value = 56.68m
+                            Name = "Know-It-All (Deluxe)",
+                            Value = 95.89m
                         },
                         new
                         {
                             VinylDiscId = 10,
                             MusicGenreId = 1,
-                            Name = "Funk Wav Bounces Vol.1",
-                            Value = 35.88m
+                            Name = "Queen",
+                            Value = 59.34m
                         },
                         new
                         {
                             VinylDiscId = 11,
                             MusicGenreId = 1,
-                            Name = "From A Distance",
-                            Value = 13.12m
+                            Name = "Heartbreak on a Full Moon",
+                            Value = 18.48m
                         },
                         new
                         {
                             VinylDiscId = 12,
                             MusicGenreId = 1,
-                            Name = "Rodeo (Expanded Edition)",
-                            Value = 19.00m
+                            Name = "SremmLife 2 (Deluxe)",
+                            Value = 72.50m
                         },
                         new
                         {
                             VinylDiscId = 13,
                             MusicGenreId = 1,
-                            Name = "Still Brazy (Deluxe)",
-                            Value = 75.89m
+                            Name = "A Head Full of Dreams",
+                            Value = 63.02m
                         },
                         new
                         {
                             VinylDiscId = 14,
                             MusicGenreId = 1,
-                            Name = "Trigga Reloaded",
-                            Value = 70.33m
+                            Name = "Major Key",
+                            Value = 13.68m
                         },
                         new
                         {
                             VinylDiscId = 15,
                             MusicGenreId = 1,
-                            Name = "This Is What You Came For",
-                            Value = 23.12m
+                            Name = "The Mack",
+                            Value = 30.94m
                         },
                         new
                         {
                             VinylDiscId = 16,
                             MusicGenreId = 1,
-                            Name = "reputation",
-                            Value = 30.52m
+                            Name = "DAMN.",
+                            Value = 54.30m
                         },
                         new
                         {
                             VinylDiscId = 17,
                             MusicGenreId = 1,
-                            Name = "The Bedroom Tour Playlist",
-                            Value = 35.71m
+                            Name = "7/27 (Deluxe)",
+                            Value = 64.85m
                         },
                         new
                         {
                             VinylDiscId = 18,
                             MusicGenreId = 1,
-                            Name = "The Good Parts",
-                            Value = 79.76m
+                            Name = "Body Say",
+                            Value = 86.15m
                         },
                         new
                         {
                             VinylDiscId = 19,
                             MusicGenreId = 1,
-                            Name = "EVOL",
-                            Value = 54.04m
+                            Name = "Funk Wav Bounces Vol.1",
+                            Value = 32.09m
                         },
                         new
                         {
                             VinylDiscId = 20,
                             MusicGenreId = 1,
-                            Name = "Oxymoron (Deluxe)",
-                            Value = 61.85m
+                            Name = "Let Me Live (feat. Anne-Marie & Mr Eazi)",
+                            Value = 66.80m
                         },
                         new
                         {
                             VinylDiscId = 21,
                             MusicGenreId = 1,
-                            Name = "This Is America",
-                            Value = 33.99m
+                            Name = "DUMMY BOY",
+                            Value = 20.41m
                         },
                         new
                         {
                             VinylDiscId = 22,
                             MusicGenreId = 1,
-                            Name = "Nothing Was The Same (Deluxe)",
-                            Value = 77.47m
+                            Name = "Boys",
+                            Value = 20.52m
                         },
                         new
                         {
                             VinylDiscId = 23,
                             MusicGenreId = 1,
-                            Name = "Beach House 3",
-                            Value = 45.02m
+                            Name = "A Star Is Born Soundtrack",
+                            Value = 70.52m
                         },
                         new
                         {
                             VinylDiscId = 24,
                             MusicGenreId = 1,
-                            Name = "I Cry When I Laugh",
-                            Value = 46.25m
+                            Name = "Young And Beautiful",
+                            Value = 91.22m
                         },
                         new
                         {
                             VinylDiscId = 25,
                             MusicGenreId = 1,
-                            Name = "PARTYNEXTDOOR 3 (P3)",
-                            Value = 75.86m
+                            Name = "Whippin (feat. Felix Snow)",
+                            Value = 31.42m
                         },
                         new
                         {
                             VinylDiscId = 26,
                             MusicGenreId = 1,
-                            Name = "Made In The A.M. (Deluxe Edition)",
-                            Value = 45.53m
+                            Name = "Who You Are (Platinum Edition)",
+                            Value = 16.43m
                         },
                         new
                         {
                             VinylDiscId = 27,
                             MusicGenreId = 1,
-                            Name = "Glory Days: The Platinum Edition",
-                            Value = 96.50m
+                            Name = "In My Mind",
+                            Value = 68.17m
                         },
                         new
                         {
                             VinylDiscId = 28,
                             MusicGenreId = 1,
-                            Name = "Morse Code",
-                            Value = 58.01m
+                            Name = "YOUTH",
+                            Value = 40.43m
                         },
                         new
                         {
                             VinylDiscId = 29,
                             MusicGenreId = 1,
-                            Name = "Mr. Davis",
-                            Value = 74.35m
+                            Name = "New",
+                            Value = 79.09m
                         },
                         new
                         {
                             VinylDiscId = 30,
                             MusicGenreId = 1,
-                            Name = "Good For You",
-                            Value = 45.52m
+                            Name = "Turn Down for What",
+                            Value = 72.98m
                         },
                         new
                         {
                             VinylDiscId = 31,
                             MusicGenreId = 1,
-                            Name = "Red Pill Blues (Deluxe)",
-                            Value = 87.15m
+                            Name = "Late Nights: The Album",
+                            Value = 81.99m
                         },
                         new
                         {
                             VinylDiscId = 32,
                             MusicGenreId = 1,
-                            Name = "VHS",
-                            Value = 54.08m
+                            Name = "Purple Lamborghini (with Rick Ross)",
+                            Value = 33.29m
                         },
                         new
                         {
                             VinylDiscId = 33,
                             MusicGenreId = 1,
-                            Name = "x (Deluxe Edition)",
-                            Value = 31.13m
+                            Name = "Red Pill Blues (Deluxe)",
+                            Value = 19.92m
                         },
                         new
                         {
                             VinylDiscId = 34,
                             MusicGenreId = 1,
-                            Name = "Waves (Robin Schulz Radio Edit)",
-                            Value = 95.27m
+                            Name = "Good For You",
+                            Value = 76.33m
                         },
                         new
                         {
                             VinylDiscId = 35,
                             MusicGenreId = 1,
-                            Name = "Party's Over",
-                            Value = 89.08m
+                            Name = "Safe Haven",
+                            Value = 80.85m
                         },
                         new
                         {
                             VinylDiscId = 36,
                             MusicGenreId = 1,
                             Name = "Views",
-                            Value = 77.01m
+                            Value = 60.24m
                         },
                         new
                         {
                             VinylDiscId = 37,
                             MusicGenreId = 1,
-                            Name = "The Truth About Love",
-                            Value = 66.77m
+                            Name = "HAIZ",
+                            Value = 47.58m
                         },
                         new
                         {
                             VinylDiscId = 38,
                             MusicGenreId = 1,
-                            Name = "Bangerz (Deluxe Version)",
-                            Value = 58.56m
+                            Name = "Project Baby 2",
+                            Value = 26.83m
                         },
                         new
                         {
                             VinylDiscId = 39,
                             MusicGenreId = 1,
-                            Name = "DAMN.",
-                            Value = 14.09m
+                            Name = "Flicker (Deluxe)",
+                            Value = 53.29m
                         },
                         new
                         {
                             VinylDiscId = 40,
                             MusicGenreId = 1,
-                            Name = "I Decided.",
-                            Value = 96.91m
+                            Name = "Kiss",
+                            Value = 36.26m
                         },
                         new
                         {
                             VinylDiscId = 41,
                             MusicGenreId = 1,
-                            Name = "Funk Wav Bounces Vol.1",
-                            Value = 53.80m
+                            Name = "Red Pill Blues (Deluxe)",
+                            Value = 62.17m
                         },
                         new
                         {
                             VinylDiscId = 42,
                             MusicGenreId = 1,
-                            Name = "Something New",
-                            Value = 19.68m
+                            Name = "Lady Wood",
+                            Value = 44.39m
                         },
                         new
                         {
                             VinylDiscId = 43,
                             MusicGenreId = 1,
-                            Name = "÷ (Deluxe)",
-                            Value = 60.09m
+                            Name = "Chaos And The Calm",
+                            Value = 78.35m
                         },
                         new
                         {
                             VinylDiscId = 44,
                             MusicGenreId = 1,
-                            Name = "PRISM (Deluxe)",
-                            Value = 11.30m
+                            Name = "PARTYNEXTDOOR 3 (P3)",
+                            Value = 99.81m
                         },
                         new
                         {
                             VinylDiscId = 45,
                             MusicGenreId = 1,
-                            Name = "Bangerz (Deluxe Version)",
-                            Value = 54.49m
+                            Name = "Campaign",
+                            Value = 49.07m
                         },
                         new
                         {
                             VinylDiscId = 46,
                             MusicGenreId = 1,
-                            Name = "Bombs Away",
-                            Value = 89.10m
+                            Name = "Solo (feat. Demi Lovato)",
+                            Value = 22.42m
                         },
                         new
                         {
                             VinylDiscId = 47,
                             MusicGenreId = 1,
-                            Name = "Perfect Strangers",
-                            Value = 66.58m
+                            Name = "I met you when I was 18. (the playlist)",
+                            Value = 41.92m
                         },
                         new
                         {
                             VinylDiscId = 48,
                             MusicGenreId = 1,
-                            Name = "All This Bad Blood",
-                            Value = 23.85m
+                            Name = "ANTI (Deluxe)",
+                            Value = 59.40m
                         },
                         new
                         {
                             VinylDiscId = 49,
                             MusicGenreId = 1,
-                            Name = "Talking Dreams (Deluxe Version)",
-                            Value = 65.27m
+                            Name = "Pretty Girls Like Trap Music",
+                            Value = 46.85m
                         },
                         new
                         {
                             VinylDiscId = 50,
                             MusicGenreId = 1,
-                            Name = "Lady Wood",
-                            Value = 29.82m
+                            Name = "1, 2, 3 (feat. Jason Derulo & De La Ghetto)",
+                            Value = 81.38m
                         },
                         new
                         {
                             VinylDiscId = 51,
                             MusicGenreId = 2,
-                            Name = "De Lá Até Aqui",
-                            Value = 96.95m
+                            Name = "A revolta dos ritmos",
+                            Value = 34.25m
                         },
                         new
                         {
                             VinylDiscId = 52,
                             MusicGenreId = 2,
-                            Name = "O Disco do Ano",
-                            Value = 25.42m
+                            Name = "Nós",
+                            Value = 83.51m
                         },
                         new
                         {
                             VinylDiscId = 53,
                             MusicGenreId = 2,
-                            Name = "Seu Jorge and Almaz",
-                            Value = 13.75m
+                            Name = "Feito Pra Acabar",
+                            Value = 39.72m
                         },
                         new
                         {
                             VinylDiscId = 54,
                             MusicGenreId = 2,
-                            Name = "I Love MPB - O Nosso Amor A Gente Inventa",
-                            Value = 41.16m
+                            Name = "ôÔÔôôÔôÔ",
+                            Value = 24.42m
                         },
                         new
                         {
                             VinylDiscId = 55,
                             MusicGenreId = 2,
-                            Name = "Nós",
-                            Value = 53.67m
+                            Name = "Geraldo Azevedo",
+                            Value = 19.34m
                         },
                         new
                         {
                             VinylDiscId = 56,
                             MusicGenreId = 2,
                             Name = "A revolta dos ritmos",
-                            Value = 73.06m
+                            Value = 60.74m
                         },
                         new
                         {
                             VinylDiscId = 57,
                             MusicGenreId = 2,
-                            Name = "Mais uma Página",
-                            Value = 85.53m
+                            Name = "O Disco do Ano",
+                            Value = 87.57m
                         },
                         new
                         {
                             VinylDiscId = 58,
                             MusicGenreId = 2,
-                            Name = "Meu Coração Não Quer Viver Batendo Devagar",
-                            Value = 88.15m
+                            Name = "Acabou Chorare",
+                            Value = 23.12m
                         },
                         new
                         {
                             VinylDiscId = 59,
                             MusicGenreId = 2,
-                            Name = "ôÔÔôôÔôÔ",
-                            Value = 54.94m
+                            Name = "Musica do Brasil Antonio Carlos Jobim \"Romántico\"",
+                            Value = 61.70m
                         },
                         new
                         {
                             VinylDiscId = 60,
                             MusicGenreId = 2,
-                            Name = "Feito Pra Acabar",
-                            Value = 51.61m
+                            Name = "É Proibido Fumar (Remasterizado)",
+                            Value = 75.45m
                         },
                         new
                         {
                             VinylDiscId = 61,
                             MusicGenreId = 2,
-                            Name = "O Micróbio do Samba",
-                            Value = 91.02m
+                            Name = "Baião de Dois",
+                            Value = 36.41m
                         },
                         new
                         {
                             VinylDiscId = 62,
                             MusicGenreId = 2,
-                            Name = "O Disco do Ano",
-                            Value = 80.60m
+                            Name = "A revolta dos ritmos",
+                            Value = 26.63m
                         },
                         new
                         {
                             VinylDiscId = 63,
                             MusicGenreId = 2,
-                            Name = "Nós",
-                            Value = 95.93m
+                            Name = "Acabou Chorare",
+                            Value = 13.06m
                         },
                         new
                         {
                             VinylDiscId = 64,
                             MusicGenreId = 2,
-                            Name = "I Love MPB - O Nosso Amor A Gente Inventa",
-                            Value = 22.06m
+                            Name = "Vanessa da Mata canta Tom Jobim (Deluxe Edition)",
+                            Value = 33.82m
                         },
                         new
                         {
                             VinylDiscId = 65,
                             MusicGenreId = 2,
-                            Name = "É Proibido Fumar (Remasterizado)",
-                            Value = 48.63m
+                            Name = "Tim Maia 1973",
+                            Value = 77.26m
                         },
                         new
                         {
                             VinylDiscId = 66,
                             MusicGenreId = 2,
-                            Name = "ôÔÔôôÔôÔ",
-                            Value = 58.94m
+                            Name = "Volta",
+                            Value = 85.09m
                         },
                         new
                         {
                             VinylDiscId = 67,
                             MusicGenreId = 2,
-                            Name = "Mais uma Página",
-                            Value = 87.76m
+                            Name = "Toni Ferreira",
+                            Value = 63.48m
                         },
                         new
                         {
                             VinylDiscId = 68,
                             MusicGenreId = 2,
                             Name = "Feito Pra Acabar",
-                            Value = 80.52m
+                            Value = 86.59m
                         },
                         new
                         {
                             VinylDiscId = 69,
                             MusicGenreId = 2,
-                            Name = "Nós",
-                            Value = 81.15m
+                            Name = "Brasis",
+                            Value = 32.74m
                         },
                         new
                         {
                             VinylDiscId = 70,
                             MusicGenreId = 2,
-                            Name = "Vanessa da Mata canta Tom Jobim (Deluxe Edition)",
-                            Value = 46.02m
+                            Name = "Seu Jorge and Almaz",
+                            Value = 70.60m
                         },
                         new
                         {
                             VinylDiscId = 71,
                             MusicGenreId = 2,
-                            Name = "O Disco do Ano",
-                            Value = 63.65m
+                            Name = "Rua dos Amores",
+                            Value = 17.62m
                         },
                         new
                         {
                             VinylDiscId = 72,
                             MusicGenreId = 2,
-                            Name = "Ana E Jorge",
-                            Value = 77.05m
+                            Name = "Meu Coração Não Quer Viver Batendo Devagar",
+                            Value = 48.92m
                         },
                         new
                         {
                             VinylDiscId = 73,
                             MusicGenreId = 2,
-                            Name = "Mais uma Página",
-                            Value = 76.57m
+                            Name = "A revolta dos ritmos",
+                            Value = 43.76m
                         },
                         new
                         {
                             VinylDiscId = 74,
                             MusicGenreId = 2,
-                            Name = "De Lá Até Aqui",
-                            Value = 57.03m
+                            Name = "Nós",
+                            Value = 95.73m
                         },
                         new
                         {
                             VinylDiscId = 75,
                             MusicGenreId = 2,
-                            Name = "ôÔÔôôÔôÔ",
-                            Value = 18.95m
+                            Name = "Roupa Nova",
+                            Value = 15.52m
                         },
                         new
                         {
                             VinylDiscId = 76,
                             MusicGenreId = 2,
-                            Name = "Fôlego",
-                            Value = 25.21m
+                            Name = "Vanessa da Mata canta Tom Jobim (Deluxe Edition)",
+                            Value = 75.91m
                         },
                         new
                         {
                             VinylDiscId = 77,
                             MusicGenreId = 2,
-                            Name = "I Love MPB - O Nosso Amor A Gente Inventa",
-                            Value = 28.28m
+                            Name = "Sinais dos Tempos",
+                            Value = 42.07m
                         },
                         new
                         {
                             VinylDiscId = 78,
                             MusicGenreId = 2,
-                            Name = "Mais uma Página",
-                            Value = 44.62m
+                            Name = "Acabou Chorare",
+                            Value = 70.61m
                         },
                         new
                         {
                             VinylDiscId = 79,
                             MusicGenreId = 2,
-                            Name = "Volta",
-                            Value = 91.65m
+                            Name = "Meu Coração Não Quer Viver Batendo Devagar",
+                            Value = 53.04m
                         },
                         new
                         {
                             VinylDiscId = 80,
                             MusicGenreId = 2,
-                            Name = "Brasis",
-                            Value = 86.66m
+                            Name = "Ana Car9lina+um",
+                            Value = 19.89m
                         },
                         new
                         {
                             VinylDiscId = 81,
                             MusicGenreId = 2,
-                            Name = "De Lá Até Aqui",
-                            Value = 78.85m
+                            Name = "ôÔÔôôÔôÔ",
+                            Value = 74.41m
                         },
                         new
                         {
                             VinylDiscId = 82,
                             MusicGenreId = 2,
-                            Name = "Toni Ferreira",
-                            Value = 83.54m
+                            Name = "I Love MPB - O Nosso Amor A Gente Inventa",
+                            Value = 19.66m
                         },
                         new
                         {
                             VinylDiscId = 83,
                             MusicGenreId = 2,
-                            Name = "Mais uma Página",
-                            Value = 92.64m
+                            Name = "Nós",
+                            Value = 93.48m
                         },
                         new
                         {
                             VinylDiscId = 84,
                             MusicGenreId = 2,
-                            Name = "Chão",
-                            Value = 55.43m
+                            Name = "De Lá Até Aqui",
+                            Value = 97.61m
                         },
                         new
                         {
                             VinylDiscId = 85,
                             MusicGenreId = 2,
                             Name = "Recanto",
-                            Value = 48.48m
+                            Value = 49.63m
                         },
                         new
                         {
                             VinylDiscId = 86,
                             MusicGenreId = 2,
-                            Name = "Nós",
-                            Value = 72.63m
+                            Name = "Geraldo Azevedo",
+                            Value = 98.38m
                         },
                         new
                         {
                             VinylDiscId = 87,
                             MusicGenreId = 2,
-                            Name = "O Disco do Ano",
-                            Value = 51.23m
+                            Name = "Acabou Chorare",
+                            Value = 93.47m
                         },
                         new
                         {
                             VinylDiscId = 88,
                             MusicGenreId = 2,
-                            Name = "Baião de Dois",
-                            Value = 89.87m
+                            Name = "Volta",
+                            Value = 95.40m
                         },
                         new
                         {
                             VinylDiscId = 89,
                             MusicGenreId = 2,
-                            Name = "Sinais dos Tempos",
-                            Value = 52.50m
+                            Name = "Nós",
+                            Value = 67.89m
                         },
                         new
                         {
                             VinylDiscId = 90,
                             MusicGenreId = 2,
-                            Name = "Dani Black",
-                            Value = 26.93m
+                            Name = "Musica do Brasil Antonio Carlos Jobim \"Romántico\"",
+                            Value = 31.00m
                         },
                         new
                         {
                             VinylDiscId = 91,
                             MusicGenreId = 2,
-                            Name = "I Love MPB - O Nosso Amor A Gente Inventa",
-                            Value = 91.38m
+                            Name = "De Lá Até Aqui",
+                            Value = 72.57m
                         },
                         new
                         {
                             VinylDiscId = 92,
                             MusicGenreId = 2,
-                            Name = "Musica do Brasil Antonio Carlos Jobim \"Romántico\"",
-                            Value = 78.52m
+                            Name = "Meu Coração Não Quer Viver Batendo Devagar",
+                            Value = 35.36m
                         },
                         new
                         {
                             VinylDiscId = 93,
                             MusicGenreId = 2,
-                            Name = "O Disco do Ano",
-                            Value = 14.52m
+                            Name = "Rua dos Amores",
+                            Value = 65.03m
                         },
                         new
                         {
                             VinylDiscId = 94,
                             MusicGenreId = 2,
-                            Name = "Nós",
-                            Value = 62.38m
+                            Name = "O Micróbio do Samba",
+                            Value = 77.74m
                         },
                         new
                         {
                             VinylDiscId = 95,
                             MusicGenreId = 2,
-                            Name = "Brasis",
-                            Value = 16.79m
+                            Name = "Mais uma Página",
+                            Value = 99.74m
                         },
                         new
                         {
                             VinylDiscId = 96,
                             MusicGenreId = 2,
-                            Name = "Volta",
-                            Value = 73.10m
+                            Name = "Vanessa da Mata canta Tom Jobim (Deluxe Edition)",
+                            Value = 46.45m
                         },
                         new
                         {
                             VinylDiscId = 97,
                             MusicGenreId = 2,
-                            Name = "Musica do Brasil Antonio Carlos Jobim \"Romántico\"",
-                            Value = 23.65m
+                            Name = "ôÔÔôôÔôÔ",
+                            Value = 42.24m
                         },
                         new
                         {
                             VinylDiscId = 98,
                             MusicGenreId = 2,
-                            Name = "Ana E Jorge",
-                            Value = 48.93m
+                            Name = "Multishow Ao Vivo Ana Carolina \"Dois Quartos\"",
+                            Value = 55.43m
                         },
                         new
                         {
                             VinylDiscId = 99,
                             MusicGenreId = 2,
-                            Name = "Recanto",
-                            Value = 62.56m
+                            Name = "Feito Pra Acabar",
+                            Value = 33.45m
                         },
                         new
                         {
                             VinylDiscId = 100,
                             MusicGenreId = 2,
-                            Name = "O Descobridor Dos Sete Mares",
-                            Value = 95.45m
+                            Name = "Nós",
+                            Value = 63.88m
                         },
                         new
                         {
                             VinylDiscId = 101,
                             MusicGenreId = 3,
-                            Name = "Satie: Avant-dernières pensées (Bonus Track Version)",
-                            Value = 12.24m
+                            Name = "Stucky: Dreamwaltzes / Chen: Duo Ye / Kilar: Krzesany",
+                            Value = 58.84m
                         },
                         new
                         {
                             VinylDiscId = 102,
                             MusicGenreId = 3,
-                            Name = "Riceboy Sleeps",
-                            Value = 85.96m
+                            Name = "Romantic Favorites for Strings (Expanded Edition)",
+                            Value = 55.22m
                         },
                         new
                         {
                             VinylDiscId = 103,
                             MusicGenreId = 3,
-                            Name = "The Essential Itzhak Perlman",
-                            Value = 42.61m
+                            Name = "Gabrielli: Early Italian Cello Music - Complete Works for Violoncello",
+                            Value = 37.57m
                         },
                         new
                         {
                             VinylDiscId = 104,
                             MusicGenreId = 3,
-                            Name = "Extreme Classics",
-                            Value = 30.15m
+                            Name = "Clara Schumann & Johannes Brahms",
+                            Value = 76.16m
                         },
                         new
                         {
                             VinylDiscId = 105,
                             MusicGenreId = 3,
-                            Name = "Mozart - Piano Concertos",
-                            Value = 66.07m
+                            Name = "Tchaikovsky: Serenade for Strings - Grieg: Holberg Suite - Mozart: Eine kleine Nachtmusik",
+                            Value = 74.66m
                         },
                         new
                         {
                             VinylDiscId = 106,
                             MusicGenreId = 3,
-                            Name = "Green - Mélodies françaises",
-                            Value = 30.80m
+                            Name = "Ives: Symphony No. 3 / Washington's Birthday",
+                            Value = 85.23m
                         },
                         new
                         {
                             VinylDiscId = 107,
                             MusicGenreId = 3,
-                            Name = "Legends Of The Fall Original Motion Picture Soundtrack",
-                            Value = 48.75m
+                            Name = "Bach, J.S.: Well-Tempered Clavier (The), Book 2",
+                            Value = 50.65m
                         },
                         new
                         {
                             VinylDiscId = 108,
                             MusicGenreId = 3,
-                            Name = "The Leftovers: Season 1 (Music from the HBO Series)",
-                            Value = 56.62m
+                            Name = "Szymanowski: String Quartets / Stravinsky: Concertino",
+                            Value = 43.89m
                         },
                         new
                         {
                             VinylDiscId = 109,
                             MusicGenreId = 3,
-                            Name = "Tenore",
-                            Value = 33.12m
+                            Name = "The Platinum Collection",
+                            Value = 19.80m
                         },
                         new
                         {
                             VinylDiscId = 110,
                             MusicGenreId = 3,
-                            Name = "Gregorian Chant",
-                            Value = 39.36m
+                            Name = "Sinkovsky Plays and Sings Vivaldi",
+                            Value = 43.33m
                         },
                         new
                         {
                             VinylDiscId = 111,
                             MusicGenreId = 3,
-                            Name = "Handel: Messiah",
-                            Value = 55.68m
+                            Name = "Bartok: Concerto for Orchestra; Music for Strings, Percussion & Celesta; Hungarian Sketches",
+                            Value = 29.58m
                         },
                         new
                         {
                             VinylDiscId = 112,
                             MusicGenreId = 3,
-                            Name = "Alexandre Tharaud. \"Voyage en France\"",
-                            Value = 51.81m
+                            Name = "Legends Of The Fall Original Motion Picture Soundtrack",
+                            Value = 27.86m
                         },
                         new
                         {
                             VinylDiscId = 113,
                             MusicGenreId = 3,
-                            Name = "Monteverdi: Vespers of 1610",
-                            Value = 96.40m
+                            Name = "Mozart & Schubert: Works for Piano Duo (Expanded Edition)",
+                            Value = 69.97m
                         },
                         new
                         {
                             VinylDiscId = 114,
                             MusicGenreId = 3,
-                            Name = "Beethoven: The Symphonies",
-                            Value = 68.18m
+                            Name = "…And They Have Escaped the Weight of Darkness",
+                            Value = 52.71m
                         },
                         new
                         {
                             VinylDiscId = 115,
                             MusicGenreId = 3,
-                            Name = "Mussorgsky: Pictures at an Exhibition, Songs and Dances of Death, Night on Bare Mountain",
-                            Value = 72.66m
+                            Name = "Astor Piazzolla: Escualo",
+                            Value = 11.94m
                         },
                         new
                         {
                             VinylDiscId = 116,
                             MusicGenreId = 3,
-                            Name = "Classical Chillout",
-                            Value = 18.38m
+                            Name = "Quarto tempo (Fourth Time)",
+                            Value = 27.65m
                         },
                         new
                         {
                             VinylDiscId = 117,
                             MusicGenreId = 3,
-                            Name = "French Impressions",
-                            Value = 87.86m
+                            Name = "Xenakis, I.: Orchestral Works, Vol. 5 - Metastaseis / Pithoprakta / St/48 / Achorripsis / Syrmos / Hiketides Suite",
+                            Value = 33.04m
                         },
                         new
                         {
                             VinylDiscId = 118,
                             MusicGenreId = 3,
-                            Name = "Vivaldi: The Four Seasons/Wind Concertos",
-                            Value = 51.40m
+                            Name = "Prokofiev: Romeo and Juliet",
+                            Value = 15.34m
                         },
                         new
                         {
                             VinylDiscId = 119,
                             MusicGenreId = 3,
-                            Name = "Faure: Requiem, Op. 48 / Pavane, Op. 50",
-                            Value = 73.48m
+                            Name = "Chopin: Complete Noctures, Barcarolle, Berceuse",
+                            Value = 84.09m
                         },
                         new
                         {
                             VinylDiscId = 120,
                             MusicGenreId = 3,
-                            Name = "Beethoven: Piano Sonatas, Vol.3",
-                            Value = 75.90m
+                            Name = "Sing with the Voice of Melody (10th Anniversary)",
+                            Value = 78.78m
                         },
                         new
                         {
                             VinylDiscId = 121,
                             MusicGenreId = 3,
-                            Name = "Linkages - Piano music by Brahms, Wagner, Schönberg a.o.",
-                            Value = 18.61m
+                            Name = "Haydn (The Best Of)",
+                            Value = 91.52m
                         },
                         new
                         {
                             VinylDiscId = 122,
                             MusicGenreId = 3,
-                            Name = "Fragment",
-                            Value = 97.79m
+                            Name = "Inception (Music From The Motion Picture)",
+                            Value = 67.98m
                         },
                         new
                         {
                             VinylDiscId = 123,
                             MusicGenreId = 3,
-                            Name = "Copland Conducts Copland - Expanded Edition (Fanfare for the Common Man, Appalachian Spring, Old American Songs (Complete), Rodeo: Four Dance Episodes)",
-                            Value = 38.92m
+                            Name = "Praetorius: Dances From Terpsichore",
+                            Value = 29.61m
                         },
                         new
                         {
                             VinylDiscId = 124,
                             MusicGenreId = 3,
-                            Name = "Lefanu: Catena / String Quartet No. 2 / Clarinet Concertino",
-                            Value = 65.12m
+                            Name = "Saman",
+                            Value = 12.63m
                         },
                         new
                         {
                             VinylDiscId = 125,
                             MusicGenreId = 3,
-                            Name = "Rimsky-Korsakov: Scheherazade, Op. 35; Capriccio espagnol, Op. 34",
-                            Value = 54.54m
+                            Name = "Fugue State",
+                            Value = 97.93m
                         },
                         new
                         {
                             VinylDiscId = 126,
                             MusicGenreId = 3,
-                            Name = "Wartime Consolations",
-                            Value = 85.03m
+                            Name = "Bach: Cello Suites Nos. 1, 5 & 6",
+                            Value = 82.16m
                         },
                         new
                         {
                             VinylDiscId = 127,
                             MusicGenreId = 3,
-                            Name = "Private Peaceful (Original Motion Picture Soundtrack)",
-                            Value = 73.43m
+                            Name = "Debussy: Images Books 1 & 2; Arabesques; Rêverie etc",
+                            Value = 83.79m
                         },
                         new
                         {
                             VinylDiscId = 128,
                             MusicGenreId = 3,
-                            Name = "The 50 Greatest Pieces of Classical Music",
-                            Value = 25.08m
+                            Name = "Gesualdo: Sacred Music for Five Voices (Complete)",
+                            Value = 65.92m
                         },
                         new
                         {
                             VinylDiscId = 129,
                             MusicGenreId = 3,
-                            Name = "John Williams Plays Bach",
-                            Value = 51.14m
+                            Name = "Tchaikovsky: Overture \"1812\"; Marche slave / Borodin: In the Steppes; Polovtsian Dances / Rimsky-Korsakov: Russian Easter; Capriccio",
+                            Value = 95.89m
                         },
                         new
                         {
                             VinylDiscId = 130,
                             MusicGenreId = 3,
-                            Name = "Verdi: Requiem",
-                            Value = 45.75m
+                            Name = "Strauss: Die Fledermaus",
+                            Value = 68.97m
                         },
                         new
                         {
                             VinylDiscId = 131,
                             MusicGenreId = 3,
-                            Name = "Stravinsky: The Firebird / The Rite of Spring",
-                            Value = 12.46m
+                            Name = "12 Years A Slave (Music From and Inspired by the Motion Picture)",
+                            Value = 44.57m
                         },
                         new
                         {
                             VinylDiscId = 132,
                             MusicGenreId = 3,
-                            Name = "The Grand Budapest Hotel (Original Soundtrack)",
-                            Value = 79.25m
+                            Name = "Monteverdi: Teatro d'amore",
+                            Value = 86.53m
                         },
                         new
                         {
                             VinylDiscId = 133,
                             MusicGenreId = 3,
-                            Name = "The Mission: Music From The Motion Picture",
-                            Value = 81.96m
+                            Name = "Hope Street Tunnel Blues: Music for Piano By Philip Glass and Alvin Curran",
+                            Value = 48.06m
                         },
                         new
                         {
                             VinylDiscId = 134,
                             MusicGenreId = 3,
-                            Name = "Maurizio Pollini - Schumann Complete Recordings",
-                            Value = 96.10m
+                            Name = "Steve Reich: Different Trains - Triple Quartet - The Four Sections",
+                            Value = 89.06m
                         },
                         new
                         {
                             VinylDiscId = 135,
                             MusicGenreId = 3,
-                            Name = "The Wind in High Places",
-                            Value = 85.32m
+                            Name = "Stravinsky: Le Sacre Du Printemps 100th Anniversary Collectors Edition",
+                            Value = 60.95m
                         },
                         new
                         {
                             VinylDiscId = 136,
                             MusicGenreId = 3,
-                            Name = "Adams: Absolute Jest & Grand Pianola Music",
-                            Value = 92.78m
+                            Name = "Schubert: Des fragments aux étoiles",
+                            Value = 30.08m
                         },
                         new
                         {
                             VinylDiscId = 137,
                             MusicGenreId = 3,
-                            Name = "Yellow Lounge Vol.3",
-                            Value = 51.83m
+                            Name = "Ligeti / Farkas / Veress / Liszt / Dohnanyi / Weiner / Mihaly: Hungarian Cello Music",
+                            Value = 82.00m
                         },
                         new
                         {
                             VinylDiscId = 138,
                             MusicGenreId = 3,
-                            Name = "Handel: Water Music",
-                            Value = 73.39m
+                            Name = "Faure: Requiem, Op. 48 / Pavane, Op. 50",
+                            Value = 28.23m
                         },
                         new
                         {
                             VinylDiscId = 139,
                             MusicGenreId = 3,
-                            Name = "Tchaikovsky: Overture \"1812\"; Marche slave / Borodin: In the Steppes; Polovtsian Dances / Rimsky-Korsakov: Russian Easter; Capriccio",
-                            Value = 89.26m
+                            Name = "Sibelius: Pelleas and Melisande Suite, Musik zu einer Szene & 3 Pièces pour orchestre",
+                            Value = 33.85m
                         },
                         new
                         {
                             VinylDiscId = 140,
                             MusicGenreId = 3,
-                            Name = "The Complete Landings",
-                            Value = 28.58m
+                            Name = "Szymanowski: Mazurkas, Opp. 50 & 62",
+                            Value = 64.30m
                         },
                         new
                         {
                             VinylDiscId = 141,
                             MusicGenreId = 3,
-                            Name = "Inception (Music From The Motion Picture)",
-                            Value = 34.78m
+                            Name = "Brahms & Stravinsky: Violin Concertos",
+                            Value = 58.63m
                         },
                         new
                         {
                             VinylDiscId = 142,
                             MusicGenreId = 3,
-                            Name = "Bach: Cello Suites Nos. 1, 5 & 6",
-                            Value = 94.50m
+                            Name = "Horowitz Plays Liszt",
+                            Value = 60.48m
                         },
                         new
                         {
                             VinylDiscId = 143,
                             MusicGenreId = 3,
-                            Name = "The Twilight Saga: Breaking Dawn - Part 2 (Original Motion Picture Soundtrack)",
-                            Value = 67.66m
+                            Name = "Last Night of the Proms",
+                            Value = 86.49m
                         },
                         new
                         {
                             VinylDiscId = 144,
                             MusicGenreId = 3,
-                            Name = "Brahms & Stravinsky: Violin Concertos",
-                            Value = 24.04m
+                            Name = "Beethoven, Period.",
+                            Value = 35.46m
                         },
                         new
                         {
                             VinylDiscId = 145,
                             MusicGenreId = 3,
-                            Name = "Adams: Harmonielehre - Short Ride in a Fast Machine",
-                            Value = 71.15m
+                            Name = "Szymanowski: Violin Sonata / Mythes / Notturne and Tarantella",
+                            Value = 12.33m
                         },
                         new
                         {
                             VinylDiscId = 146,
                             MusicGenreId = 3,
-                            Name = "AVATAR Music From The Motion Picture Music Composed and Conducted by James Horner",
-                            Value = 50.47m
+                            Name = "Time Present And Time Past",
+                            Value = 55.61m
                         },
                         new
                         {
                             VinylDiscId = 147,
                             MusicGenreId = 3,
-                            Name = "Sinkovsky Plays and Sings Vivaldi",
-                            Value = 82.02m
+                            Name = "Schumann: A Tribute to Bach",
+                            Value = 65.29m
                         },
                         new
                         {
                             VinylDiscId = 148,
                             MusicGenreId = 3,
-                            Name = "Hero - Music from the Original Soundtrack",
-                            Value = 46.24m
+                            Name = "Grieg: Lyric Pieces, Books 1 - 4, Opp. 12, 38, 43 and 47",
+                            Value = 23.22m
                         },
                         new
                         {
                             VinylDiscId = 149,
                             MusicGenreId = 3,
-                            Name = "Time Curve: Music for Piano by Philip Glass and William Duckworth",
-                            Value = 89.62m
+                            Name = "Nikolai Kapustin. Works for Piano and Cello",
+                            Value = 76.70m
                         },
                         new
                         {
                             VinylDiscId = 150,
                             MusicGenreId = 3,
-                            Name = "Ives: Symphony No. 3 / Washington's Birthday",
-                            Value = 98.31m
+                            Name = "Mezopotamya Senfonisi No.2 , Op.38 - Universe Senfonisi No.3, Op.43",
+                            Value = 82.99m
                         },
                         new
                         {
                             VinylDiscId = 151,
                             MusicGenreId = 4,
-                            Name = "American Fool",
-                            Value = 85.14m
+                            Name = "Trench",
+                            Value = 24.31m
                         },
                         new
                         {
                             VinylDiscId = 152,
                             MusicGenreId = 4,
-                            Name = "Jeremy",
-                            Value = 72.15m
+                            Name = "Aerosmith",
+                            Value = 37.80m
                         },
                         new
                         {
                             VinylDiscId = 153,
                             MusicGenreId = 4,
-                            Name = "A Beautiful Lie",
-                            Value = 75.35m
+                            Name = "Tranquility Base Hotel & Casino",
+                            Value = 71.25m
                         },
                         new
                         {
                             VinylDiscId = 154,
                             MusicGenreId = 4,
-                            Name = "Wild Frontier",
-                            Value = 86.56m
+                            Name = "By the Way (Deluxe Edition)",
+                            Value = 54.58m
                         },
                         new
                         {
                             VinylDiscId = 155,
                             MusicGenreId = 4,
-                            Name = "No More Tears (Expanded Edition)",
-                            Value = 87.74m
+                            Name = "Seal The Deal & Let's Boogie (Deluxe)",
+                            Value = 72.26m
                         },
                         new
                         {
                             VinylDiscId = 156,
                             MusicGenreId = 4,
-                            Name = "YOUNG&DANGEROUS",
-                            Value = 14.35m
+                            Name = "New Jersey (Deluxe Edition)",
+                            Value = 90.76m
                         },
                         new
                         {
                             VinylDiscId = 157,
                             MusicGenreId = 4,
-                            Name = "Endgame",
-                            Value = 57.95m
+                            Name = "Significant Other",
+                            Value = 36.52m
                         },
                         new
                         {
                             VinylDiscId = 158,
                             MusicGenreId = 4,
-                            Name = "For Crying Out Loud (Deluxe)",
-                            Value = 77.39m
+                            Name = "Machine Head (Remastered)",
+                            Value = 35.83m
                         },
                         new
                         {
                             VinylDiscId = 159,
                             MusicGenreId = 4,
-                            Name = "Crazy World",
-                            Value = 75.51m
+                            Name = "Shake Your Money Maker",
+                            Value = 78.13m
                         },
                         new
                         {
                             VinylDiscId = 160,
                             MusicGenreId = 4,
-                            Name = "Straight Shooter",
-                            Value = 80.94m
+                            Name = "Jeremy",
+                            Value = 92.40m
                         },
                         new
                         {
                             VinylDiscId = 161,
                             MusicGenreId = 4,
-                            Name = "Foreigner (Expanded)",
-                            Value = 57.26m
+                            Name = "Girls, Girls, Girls",
+                            Value = 12.34m
                         },
                         new
                         {
                             VinylDiscId = 162,
                             MusicGenreId = 4,
-                            Name = "Going Grey",
-                            Value = 34.57m
+                            Name = "AMERICA",
+                            Value = 84.62m
                         },
                         new
                         {
                             VinylDiscId = 163,
                             MusicGenreId = 4,
-                            Name = "Third Eye Blind",
-                            Value = 16.38m
+                            Name = "The Atlas Underground",
+                            Value = 47.90m
                         },
                         new
                         {
                             VinylDiscId = 164,
                             MusicGenreId = 4,
-                            Name = "11 Short Stories of Pain & Glory",
-                            Value = 87.27m
+                            Name = "Run For Cover",
+                            Value = 50.73m
                         },
                         new
                         {
                             VinylDiscId = 165,
                             MusicGenreId = 4,
-                            Name = "The Black Parade",
-                            Value = 37.80m
+                            Name = "...Like Clockwork",
+                            Value = 98.66m
                         },
                         new
                         {
                             VinylDiscId = 166,
                             MusicGenreId = 4,
-                            Name = "Wonder What's Next (Expanded Edition)",
-                            Value = 76.33m
+                            Name = "Rumours",
+                            Value = 42.94m
                         },
                         new
                         {
                             VinylDiscId = 167,
                             MusicGenreId = 4,
-                            Name = "Tranquility Base Hotel & Casino",
-                            Value = 69.75m
+                            Name = "Heaven & Hell",
+                            Value = 79.70m
                         },
                         new
                         {
                             VinylDiscId = 168,
                             MusicGenreId = 4,
-                            Name = "The Peace And The Panic",
-                            Value = 11.20m
+                            Name = "Coming Home (Deluxe Edition)",
+                            Value = 80.81m
                         },
                         new
                         {
                             VinylDiscId = 169,
                             MusicGenreId = 4,
-                            Name = "Meteora (Bonus Edition)",
-                            Value = 82.76m
+                            Name = "Wolfmother",
+                            Value = 91.66m
                         },
                         new
                         {
                             VinylDiscId = 170,
                             MusicGenreId = 4,
-                            Name = "From Under The Cork Tree",
-                            Value = 79.78m
+                            Name = "Wild Cat",
+                            Value = 81.76m
                         },
                         new
                         {
                             VinylDiscId = 171,
                             MusicGenreId = 4,
-                            Name = "Amaryllis",
-                            Value = 66.44m
+                            Name = "Generation Rx",
+                            Value = 45.55m
                         },
                         new
                         {
                             VinylDiscId = 172,
                             MusicGenreId = 4,
-                            Name = "Lighting Matches (Deluxe)",
-                            Value = 25.38m
+                            Name = "Wednesday Morning, 3 A.M.",
+                            Value = 15.71m
                         },
                         new
                         {
                             VinylDiscId = 173,
                             MusicGenreId = 4,
-                            Name = "Ill Communication",
-                            Value = 62.04m
+                            Name = "Last Young Renegade",
+                            Value = 81.39m
                         },
                         new
                         {
                             VinylDiscId = 174,
                             MusicGenreId = 4,
-                            Name = "Facelift",
-                            Value = 55.80m
+                            Name = "Synchronicity (Remastered 2003)",
+                            Value = 30.69m
                         },
                         new
                         {
                             VinylDiscId = 175,
                             MusicGenreId = 4,
-                            Name = "Are You Experienced",
-                            Value = 52.02m
+                            Name = "The Black Parade",
+                            Value = 31.05m
                         },
                         new
                         {
                             VinylDiscId = 176,
                             MusicGenreId = 4,
-                            Name = "Hot Fuss",
-                            Value = 24.01m
+                            Name = "As You Were (Deluxe Edition)",
+                            Value = 41.94m
                         },
                         new
                         {
                             VinylDiscId = 177,
                             MusicGenreId = 4,
-                            Name = "World Away",
-                            Value = 41.04m
+                            Name = "American IV: The Man Comes Around",
+                            Value = 81.39m
                         },
                         new
                         {
                             VinylDiscId = 178,
                             MusicGenreId = 4,
-                            Name = "Spirit (Deluxe)",
-                            Value = 25.78m
+                            Name = "House of Gold & Bones, Part 1",
+                            Value = 94.05m
                         },
                         new
                         {
                             VinylDiscId = 179,
                             MusicGenreId = 4,
-                            Name = "Born To Run",
-                            Value = 93.87m
+                            Name = "Crooked Teeth (Deluxe)",
+                            Value = 11.21m
                         },
                         new
                         {
                             VinylDiscId = 180,
                             MusicGenreId = 4,
-                            Name = "Cross Road",
-                            Value = 14.98m
+                            Name = "5",
+                            Value = 53.22m
                         },
                         new
                         {
                             VinylDiscId = 181,
                             MusicGenreId = 4,
-                            Name = "It's Not Over....The Hits So Far",
-                            Value = 13.91m
+                            Name = "RIOT!",
+                            Value = 27.77m
                         },
                         new
                         {
                             VinylDiscId = 182,
                             MusicGenreId = 4,
-                            Name = "Surrealistic Pillow",
-                            Value = 38.09m
+                            Name = "Crazy World",
+                            Value = 71.46m
                         },
                         new
                         {
                             VinylDiscId = 183,
                             MusicGenreId = 4,
-                            Name = "Supernatural (Remastered)",
-                            Value = 35.36m
+                            Name = "Parallel Lines (Remastered)",
+                            Value = 89.13m
                         },
                         new
                         {
                             VinylDiscId = 184,
                             MusicGenreId = 4,
-                            Name = "Meteora",
-                            Value = 52.73m
+                            Name = "Paranoid (2009 Remastered Version)",
+                            Value = 23.80m
                         },
                         new
                         {
                             VinylDiscId = 185,
                             MusicGenreId = 4,
-                            Name = "Honky Chateau",
-                            Value = 60.51m
+                            Name = "Permission To Land",
+                            Value = 55.57m
                         },
                         new
                         {
                             VinylDiscId = 186,
                             MusicGenreId = 4,
-                            Name = "Keep The Faith",
-                            Value = 40.21m
+                            Name = "The River",
+                            Value = 17.68m
                         },
                         new
                         {
                             VinylDiscId = 187,
                             MusicGenreId = 4,
-                            Name = "Crazy World",
-                            Value = 14.80m
+                            Name = "Surrealistic Pillow",
+                            Value = 26.19m
                         },
                         new
                         {
                             VinylDiscId = 188,
                             MusicGenreId = 4,
-                            Name = "Nightmare",
-                            Value = 95.30m
+                            Name = "Terrible Human Beings",
+                            Value = 93.38m
                         },
                         new
                         {
                             VinylDiscId = 189,
                             MusicGenreId = 4,
-                            Name = "The Better Life",
-                            Value = 19.26m
+                            Name = "Lighting Matches (Deluxe)",
+                            Value = 27.70m
                         },
                         new
                         {
                             VinylDiscId = 190,
                             MusicGenreId = 4,
-                            Name = "Simulation Theory (Super Deluxe)",
-                            Value = 81.87m
+                            Name = "Around the World and Back (Deluxe)",
+                            Value = 70.09m
                         },
                         new
                         {
                             VinylDiscId = 191,
                             MusicGenreId = 4,
-                            Name = "Veni Vidi Vicious",
-                            Value = 45.74m
+                            Name = "Throwing Copper",
+                            Value = 93.47m
                         },
                         new
                         {
                             VinylDiscId = 192,
                             MusicGenreId = 4,
-                            Name = "Tom Petty & The Heartbreakers",
-                            Value = 74.34m
+                            Name = "Nation Of Two",
+                            Value = 57.06m
                         },
                         new
                         {
                             VinylDiscId = 193,
                             MusicGenreId = 4,
-                            Name = "Hydrograd",
-                            Value = 97.77m
+                            Name = "Wish",
+                            Value = 50.00m
                         },
                         new
                         {
                             VinylDiscId = 194,
                             MusicGenreId = 4,
-                            Name = "RARE",
-                            Value = 19.22m
+                            Name = "Lovely Little Lonely",
+                            Value = 41.35m
                         },
                         new
                         {
                             VinylDiscId = 195,
                             MusicGenreId = 4,
-                            Name = "Rebel Yell",
-                            Value = 71.22m
+                            Name = "Escape",
+                            Value = 62.86m
                         },
                         new
                         {
                             VinylDiscId = 196,
                             MusicGenreId = 4,
-                            Name = "Led Zeppelin",
-                            Value = 11.12m
+                            Name = "Are You Experienced",
+                            Value = 73.90m
                         },
                         new
                         {
                             VinylDiscId = 197,
                             MusicGenreId = 4,
-                            Name = "Every Six Seconds",
-                            Value = 89.02m
+                            Name = "Don't You Worry, Honey",
+                            Value = 23.48m
                         },
                         new
                         {
                             VinylDiscId = 198,
                             MusicGenreId = 4,
-                            Name = "Rumours",
-                            Value = 80.29m
+                            Name = "A Fever You Can't Sweat Out",
+                            Value = 46.66m
                         },
                         new
                         {
                             VinylDiscId = 199,
                             MusicGenreId = 4,
-                            Name = "Can't Deny Me",
-                            Value = 86.13m
+                            Name = "American Fool",
+                            Value = 36.70m
                         },
                         new
                         {
                             VinylDiscId = 200,
                             MusicGenreId = 4,
-                            Name = "Revolution Radio",
-                            Value = 94.72m
+                            Name = "Egypt Station",
+                            Value = 69.28m
                         });
                 });
 

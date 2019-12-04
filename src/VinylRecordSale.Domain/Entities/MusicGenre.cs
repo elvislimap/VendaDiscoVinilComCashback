@@ -13,10 +13,9 @@ namespace VinylRecordSale.Domain.Entities
             Description = description;
         }
 
-        public int MusicGenreId { get; private set; }
-        public string Description { get; private set; }
-
-        public virtual IList<VinylDisc> VinylDiscs { get; private set; }
+        public int MusicGenreId { get; set; }
+        public string Description { get; set; }
+        public virtual IList<VinylDisc> VinylDiscs { get; set; }
 
         public override bool IsValid()
         {

@@ -14,11 +14,10 @@ namespace VinylRecordSale.Domain.Entities
             Email = email;
         }
 
-        public int ClientId { get; private set; }
-        public string FullName { get; private set; }
-        public string Email { get; private set; }
-
-        public virtual IList<Sale> Sales { get; private set; }
+        public int ClientId { get; set; }
+        public string FullName { get; set; }
+        public string Email { get; set; }
+        public virtual IList<Sale> Sales { get; set; }
 
         public override bool IsValid()
         {

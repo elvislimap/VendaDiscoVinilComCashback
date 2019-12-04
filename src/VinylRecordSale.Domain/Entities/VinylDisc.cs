@@ -15,13 +15,12 @@ namespace VinylRecordSale.Domain.Entities
             Value = value;
         }
 
-        public int VinylDiscId { get; private set; }
-        public int MusicGenreId { get; private set; }
-        public string Name { get; private set; }
-        public decimal Value { get; private set; }
-
-        public virtual MusicGenre MusicGenre { get; private set; }
-        public virtual IList<ItemSale> ItemSales { get; private set; }
+        public int VinylDiscId { get; set; }
+        public int MusicGenreId { get; set; }
+        public string Name { get; set; }
+        public decimal Value { get; set; }
+        public virtual MusicGenre MusicGenre { get; set; }
+        public virtual IList<ItemSale> ItemSales { get; set; }
 
         public override bool IsValid()
         {
@@ -29,7 +28,7 @@ namespace VinylRecordSale.Domain.Entities
             return ValidationResult.IsValid;
         }
 
-        public void AddMusicGenre(MusicGenre musicGenre)
+        public void SetMusicGenre(MusicGenre musicGenre)
         {
             MusicGenre = musicGenre;
         }

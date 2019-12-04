@@ -10,7 +10,7 @@ namespace VinylRecordSale.Infra.Data.Repositories.Dapper.Commons
     {
         private readonly IContextDapper _context;
 
-        public DapperRepositoryBase(IContextDapper context)
+        protected DapperRepositoryBase(IContextDapper context)
         {
             _context = context;
         }

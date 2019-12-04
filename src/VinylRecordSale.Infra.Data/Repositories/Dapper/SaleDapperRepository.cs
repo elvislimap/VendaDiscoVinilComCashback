@@ -31,10 +31,7 @@ namespace VinylRecordSale.Infra.Data.Repositories.Dapper
                   ORDER BY s.Date DESC
                   OFFSET @skip ROWS
                   FETCH NEXT @take ROWS ONLY;",
-                map: (sale, itemSale, vinylDisc) =>
-                {
-                    return MapSaleDapperQuery(saleDictionary, sale, itemSale, vinylDisc);
-                },
+                map: (sale, itemSale, vinylDisc) => MapSaleDapperQuery(saleDictionary, sale, itemSale, vinylDisc),
                 splitOn: "SaleId, VinylDiscId",
                 param: new
                 {
@@ -55,26 +52,22 @@ namespace VinylRecordSale.Infra.Data.Repositories.Dapper
                   INNER JOIN VinylRecordSale.ItemSales i ON s.SaleId = i.SaleId
                   INNER JOIN VinylRecordSale.VinylDiscs v ON i.VinylDiscId = v.VinylDiscId
                   WHERE s.SaleId = @saleId;",
-                map: (sale, itemSale, vinylDisc) =>
-                {
-                    return MapSaleDapperQuery(saleDictionary, sale, itemSale, vinylDisc);
-                },
+                map: (sale, itemSale, vinylDisc) => MapSaleDapperQuery(saleDictionary, sale, itemSale, vinylDisc),
                 splitOn: "SaleId, VinylDiscId",
-                param: new { saleId = id }).FirstOrDefault();
+                param: new {saleId = id}).FirstOrDefault();
         }
 
 
-        private static Sale MapSaleDapperQuery(Dictionary<int, Sale> saleDictionary, Sale sale,
+        private static Sale MapSaleDapperQuery(IDictionary<int, Sale> saleDictionary, Sale sale,
             ItemSale itemSale, VinylDisc vinylDisc)
         {
             if (!saleDictionary.TryGetValue(sale.SaleId, out var saleEntry))
             {
                 saleEntry = sale;
-                saleEntry.AddItemSales(new List<ItemSale>());
                 saleDictionary.Add(saleEntry.SaleId, saleEntry);
             }
 
-            itemSale.AddVinylDisc(vinylDisc);
+            itemSale.SetVinylDisc(vinylDisc);
             saleEntry.AddItemSale(itemSale);
 
             return saleEntry;

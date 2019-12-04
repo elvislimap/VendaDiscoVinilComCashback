@@ -17,15 +17,14 @@ namespace VinylRecordSale.Domain.Entities
             Cashback = cashback;
         }
 
-        public int ItemSaleId { get; private set; }
-        public int SaleId { get; private set; }
-        public int VinylDiscId { get; private set; }
-        public int Quantity { get; private set; }
-        public decimal Value { get; private set; }
-        public decimal Cashback { get; private set; }
-
-        public virtual Sale Sale { get; private set; }
-        public virtual VinylDisc VinylDisc { get; private set; }
+        public int ItemSaleId { get; set; }
+        public int SaleId { get; set; }
+        public int VinylDiscId { get; set; }
+        public int Quantity { get; set; }
+        public decimal Value { get; set; }
+        public decimal Cashback { get; set; }
+        public virtual Sale Sale { get; set; }
+        public virtual VinylDisc VinylDisc { get; set; }
 
         public override bool IsValid()
         {
@@ -33,7 +32,7 @@ namespace VinylRecordSale.Domain.Entities
             return ValidationResult.IsValid;
         }
 
-        public void AddVinylDisc(VinylDisc vinylDisc)
+        public void SetVinylDisc(VinylDisc vinylDisc)
         {
             VinylDisc = vinylDisc;
         }

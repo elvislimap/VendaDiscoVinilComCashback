@@ -11,5 +11,10 @@ namespace VinylRecordSale.Domain.Entities
         {
             throw new NotImplementedException("This method must be overridden");
         }
+
+        public void SetValidationResult(ValidationResult validationResult)
+        {
+            ValidationResult = validationResult;
+        }
     }
 }

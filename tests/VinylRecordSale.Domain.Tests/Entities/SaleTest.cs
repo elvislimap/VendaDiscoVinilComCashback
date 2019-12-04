@@ -1,5 +1,4 @@
 ﻿using Bogus;
-using System.Collections.Generic;
 using VinylRecordSale.Domain.Entities;
 using Xunit;
 
@@ -42,20 +41,16 @@ namespace VinylRecordSale.Domain.Tests.Entities
         private static Sale GetSaleValid()
         {
             return new Faker<Sale>()
-                .RuleFor(s => s.ClientId, (f, s) => f.Random.Int(1, 100))
-                .RuleFor(s => s.TotalValue, (f, s) => f.Random.Decimal(10.9M, 99.9M))
-                .RuleFor(s => s.CashbackTotal, (f, s) => f.Random.Decimal(5, 50))
-                .RuleFor(s => s.Date, (f, s) => f.Date.Past())
+                .CustomInstantiator(f => new Sale(0, f.Random.Int(1, 100), f.Random.Decimal(10.9M, 99.9M),
+                    f.Random.Decimal(5, 50), f.Date.Past()))
                 .Generate();
         }
 
         private static Sale GetSaleInvalid()
         {
             return new Faker<Sale>()
-                .RuleFor(s => s.ClientId, (f, s) => f.Random.Int(-100, -1))
-                .RuleFor(s => s.TotalValue, (f, s) => f.Random.Decimal(10.9M, 99.9M))
-                .RuleFor(s => s.CashbackTotal, (f, s) => f.Random.Decimal(5, 50))
-                .RuleFor(s => s.Date, (f, s) => f.Date.Past())
+                .CustomInstantiator(f => new Sale(0, f.Random.Int(-100, -1), f.Random.Decimal(10.9M, 99.9M),
+                    f.Random.Decimal(5, 50), f.Date.Past()))
                 .Generate();
         }
     }

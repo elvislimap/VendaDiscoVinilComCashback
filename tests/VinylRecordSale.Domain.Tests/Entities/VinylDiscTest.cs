@@ -40,16 +40,15 @@ namespace VinylRecordSale.Domain.Tests.Entities
         private static VinylDisc GetVinylDiscValid()
         {
             return new Faker<VinylDisc>()
-                .RuleFor(v => v.MusicGenreId, (f, v) => f.Random.Int(1, 4))
-                .RuleFor(v => v.Name, (f, v) => f.Name.JobTitle())
-                .RuleFor(v => v.Value, (f, v) => f.Random.Decimal(10.9M, 99.9M))
+                .CustomInstantiator(f =>
+                    new VinylDisc(0, f.Random.Int(1, 4), f.Name.JobTitle(), f.Random.Decimal(10.9M, 99.9M)))
                 .Generate();
         }
 
         private static VinylDisc GetVinylDiscInvalid()
         {
             return new Faker<VinylDisc>()
-                .RuleFor(v => v.Name, (f, v) => f.Name.JobTitle())
+                .CustomInstantiator(f => new VinylDisc(0, 0, f.Name.JobTitle(), 0))
                 .Generate();
         }
     }

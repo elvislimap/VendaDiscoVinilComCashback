@@ -1,4 +1,5 @@
 ﻿using Bogus;
+using VinylRecordSale.Domain.Commons;
 using VinylRecordSale.Domain.Entities;
 using Xunit;
 
@@ -39,16 +40,19 @@ namespace VinylRecordSale.Domain.Tests.Entities
 
         private static Client GetClientValid()
         {
-            return new Faker<Client>("pt_BR")
-                .RuleFor(c => c.FullName, (f, c) => f.Name.FullName())
-                .RuleFor(c => c.Email, (f, c) => f.Internet.Email(c.FullName.ToLower()))
+            var client = new Faker<Client>(Constants.LanguageBogus)
+                .CustomInstantiator(f => new Client(0, f.Name.FullName(), null))
+                .Generate();
+
+            return new Faker<Client>(Constants.LanguageBogus)
+                .CustomInstantiator(f => new Client(0, client.FullName, f.Internet.Email(client.FullName.ToLower())))
                 .Generate();
         }
 
         private static Client GetClientInvalid()
         {
-            return new Faker<Client>("pt_BR")
-                .RuleFor(c => c.Email, (f, c) => f.Internet.Email())
+            return new Faker<Client>(Constants.LanguageBogus)
+                .CustomInstantiator(f => new Client(0, null, f.Internet.Email()))
                 .Generate();
         }
     }

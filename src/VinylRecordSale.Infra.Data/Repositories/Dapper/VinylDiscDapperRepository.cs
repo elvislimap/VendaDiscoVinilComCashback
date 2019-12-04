@@ -28,7 +28,7 @@ namespace VinylRecordSale.Infra.Data.Repositories.Dapper
                   FETCH NEXT @take ROWS ONLY;",
                 map: (vinylMusic, musicGenre) =>
                 {
-                    vinylMusic.AddMusicGenre(musicGenre);
+                    vinylMusic.SetMusicGenre(musicGenre);
                     return vinylMusic;
                 },
                 splitOn: "MusicGenreId, MusicGenreId",

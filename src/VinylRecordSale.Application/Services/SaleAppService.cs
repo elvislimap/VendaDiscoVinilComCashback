@@ -2,6 +2,7 @@
 using VinylRecordSale.Application.Interfaces;
 using VinylRecordSale.Domain.Entities;
 using VinylRecordSale.Domain.Interfaces.Repositories.Dapper;
+using VinylRecordSale.Domain.Interfaces.Services;
 using VinylRecordSale.Domain.ValueObjects;
 
 namespace VinylRecordSale.Application.Services
@@ -9,30 +10,26 @@ namespace VinylRecordSale.Application.Services
     public class SaleAppService : ISaleAppService
     {
         private readonly ISaleDapperRepository _saleDapperRepository;
+        private readonly ISaleService _saleService;
 
-        public SaleAppService(ISaleDapperRepository saleDapperRepository)
+        public SaleAppService(ISaleDapperRepository saleDapperRepository, ISaleService saleService)
         {
             _saleDapperRepository = saleDapperRepository;
+            _saleService = saleService;
         }
 
 
         public Result Insert(Sale sale)
         {
+            sale.SetDateNow();
+
             if (!sale.IsValid())
                 return new Result(sale.ValidationResult, false);
 
-            // Verify exists client
+            _saleService.Insert(sale);
+            var ok = sale.ValidationResult?.IsValid ?? true;
 
-            // Verify exists ids vinylDiscs
-            // Calculate value by quantity
-            // Calculate cashback by quantity
-
-            // Sum total value
-            // Sum total cashback
-
-            // Insert
-
-            return new Result(null);
+            return new Result(ok ? sale : sale.ValidationResult as object, ok);
         }
 
         public Result Get(int saleId)

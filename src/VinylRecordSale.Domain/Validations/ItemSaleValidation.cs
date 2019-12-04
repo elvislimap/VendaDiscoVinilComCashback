@@ -7,9 +7,6 @@ namespace VinylRecordSale.Domain.Validations
     {
         public ItemSaleValidation()
         {
-            RuleFor(i => i.SaleId)
-                .GreaterThan(0).WithMessage("SaleId must be greater than 0");
-
             RuleFor(i => i.VinylDiscId)
                 .GreaterThan(0).WithMessage("VinylDiscId must be greater than 0");
 

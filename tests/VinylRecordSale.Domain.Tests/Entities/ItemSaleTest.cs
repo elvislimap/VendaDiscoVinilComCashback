@@ -40,21 +40,16 @@ namespace VinylRecordSale.Domain.Tests.Entities
         private static ItemSale GetItemSaleValid()
         {
             return new Faker<ItemSale>()
-                .RuleFor(i => i.SaleId, (f, i) => f.Random.Int(1, 400))
-                .RuleFor(i => i.VinylDiscId, (f, i) => f.Random.Int(1, 200))
-                .RuleFor(i => i.Quantity, (f, i) => f.Random.Int(1, 10))
-                .RuleFor(i => i.Value, (f, i) => f.Random.Decimal(10.9M, 99.9M))
-                .RuleFor(i => i.Cashback, (f, i) => f.Random.Decimal(5, 50))
+                .CustomInstantiator(f => new ItemSale(0, f.Random.Int(1, 400), f.Random.Int(1, 200),
+                    f.Random.Int(1, 10), f.Random.Decimal(10.9M, 99.9M), f.Random.Decimal(5, 50)))
                 .Generate();
         }
 
         private static ItemSale GetItemSaleInvalid()
         {
             return new Faker<ItemSale>()
-                .RuleFor(i => i.SaleId, (f, i) => f.Random.Int(1, 400))
-                .RuleFor(i => i.VinylDiscId, (f, i) => f.Random.Int(-100, -1))
-                .RuleFor(i => i.Quantity, (f, i) => f.Random.Int(1, 10))
-                .RuleFor(i => i.Cashback, (f, i) => f.Random.Decimal(5, 50))
+                .CustomInstantiator(f => new ItemSale(0, f.Random.Int(1, 400), f.Random.Int(-100, -1),
+                    f.Random.Int(1, 10), f.Random.Int(-100, -1), f.Random.Decimal(5, 50)))
                 .Generate();
         }
     }

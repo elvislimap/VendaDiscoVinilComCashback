@@ -2,6 +2,7 @@
 using System;
 using System.Threading.Tasks;
 using VinylRecordSale.Application.Interfaces;
+using VinylRecordSale.Domain.Entities;
 using VinylRecordSale.Service.Api.Commons;
 
 namespace VinylRecordSale.Service.Api.Controllers.V1
@@ -28,6 +29,12 @@ namespace VinylRecordSale.Service.Api.Controllers.V1
         public Task<ObjectResult> GetPaged(int page, DateTime initialDate, DateTime finalDate)
         {
             return _saleAppService.GetPaged(page, initialDate, finalDate).TaskResult();
+        }
+
+        [HttpPost("Insert")]
+        public Task<ObjectResult> Insert([FromBody] Sale sale)
+        {
+            return _saleAppService.Insert(sale).TaskResult();
         }
     }
 }

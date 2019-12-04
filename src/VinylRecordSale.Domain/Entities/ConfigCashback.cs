@@ -20,14 +20,14 @@ namespace VinylRecordSale.Domain.Entities
             PercentageSaturday = percentageSaturday;
         }
 
-        public int MusicGenreId { get; private set; }
-        public decimal PercentageSunday { get; private set; }
-        public decimal PercentageMonday { get; private set; }
-        public decimal PercentageTuesday { get; private set; }
-        public decimal PercentageWednesday { get; private set; }
-        public decimal PercentageThursday { get; private set; }
-        public decimal PercentageFriday { get; private set; }
-        public decimal PercentageSaturday { get; private set; }
+        public int MusicGenreId { get; set; }
+        public decimal PercentageSunday { get; set; }
+        public decimal PercentageMonday { get; set; }
+        public decimal PercentageTuesday { get; set; }
+        public decimal PercentageWednesday { get; set; }
+        public decimal PercentageThursday { get; set; }
+        public decimal PercentageFriday { get; set; }
+        public decimal PercentageSaturday { get; set; }
 
         public override bool IsValid()
         {
