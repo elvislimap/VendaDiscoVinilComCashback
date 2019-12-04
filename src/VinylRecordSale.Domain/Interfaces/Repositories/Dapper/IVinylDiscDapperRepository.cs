@@ -1,7 +1,11 @@
-﻿using VinylRecordSale.Domain.Entities;
+﻿using System.Collections.Generic;
+using VinylRecordSale.Domain.Entities;
 using VinylRecordSale.Domain.Interfaces.Repositories.Dapper.Common;
 
 namespace VinylRecordSale.Domain.Interfaces.Repositories.Dapper
 {
-    public interface IVinylDiscDapperRepository : IDapperRepositoryBase<VinylDisc> { }
+    public interface IVinylDiscDapperRepository : IDapperRepositoryBase<VinylDisc>
+    {
+        IEnumerable<VinylDisc> Get(int page, int musicGenreId);
+    }
 }

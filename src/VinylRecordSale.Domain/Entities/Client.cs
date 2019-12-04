@@ -18,7 +18,7 @@ namespace VinylRecordSale.Domain.Entities
         public string FullName { get; private set; }
         public string Email { get; private set; }
 
-        public virtual IEnumerable<Sale> Sales { get; private set; }
+        public virtual IList<Sale> Sales { get; private set; }
 
         public override bool IsValid()
         {

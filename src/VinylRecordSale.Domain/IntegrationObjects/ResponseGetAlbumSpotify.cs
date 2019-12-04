@@ -1,6 +1,6 @@
 ﻿using VinylRecordSale.Domain.Enums;
 
-namespace VinylRecordSale.Domain.IntegrationValues
+namespace VinylRecordSale.Domain.IntegrationObjects
 {
     public class ResponseGetAlbumSpotify
     {

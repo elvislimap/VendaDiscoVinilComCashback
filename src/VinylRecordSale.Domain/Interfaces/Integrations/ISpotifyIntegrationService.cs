@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 using VinylRecordSale.Domain.Enums;
-using VinylRecordSale.Domain.IntegrationValues;
+using VinylRecordSale.Domain.IntegrationObjects;
 
 namespace VinylRecordSale.Domain.Interfaces.Integrations
 {

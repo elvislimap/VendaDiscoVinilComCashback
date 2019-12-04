@@ -1,9 +1,13 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using VinylRecordSale.Application.Interfaces;
+using VinylRecordSale.Application.Services;
 using VinylRecordSale.Domain.Interfaces.Contexts;
 using VinylRecordSale.Domain.Interfaces.Integrations;
 using VinylRecordSale.Domain.Interfaces.Repositories.Dapper;
+using VinylRecordSale.Domain.Interfaces.Repositories.EntityFramework;
 using VinylRecordSale.Infra.Data.Contexts;
 using VinylRecordSale.Infra.Data.Repositories.Dapper;
+using VinylRecordSale.Infra.Data.Repositories.EntityFramework;
 using VinylRecordSale.Infra.Integrations.Spotify;
 
 namespace VinylRecordSale.Infra.CrossCutting.Ioc
@@ -28,6 +32,20 @@ namespace VinylRecordSale.Infra.CrossCutting.Ioc
 
             services.AddScoped<IVinylDiscDapperRepository, VinylDiscDapperRepository>();
             services.AddScoped<ISaleDapperRepository, SaleDapperRepository>();
+            services.AddScoped<IConfigCashbackDapperRepository, ConfigCashbackDapperRepository>();
+
+            #endregion
+
+            #region EF repositories
+
+            services.AddScoped<ISaleEFRepository, SaleEFRepository>();
+
+            #endregion
+
+            #region AppServices
+
+            services.AddScoped<IVinylDiscAppService, VinylDiscAppService>();
+            services.AddScoped<ISaleAppService, SaleAppService>();
 
             #endregion
         }

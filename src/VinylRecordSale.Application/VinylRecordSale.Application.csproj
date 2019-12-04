@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentValidation" Version="8.5.1" />
+    <ProjectReference Include="..\VinylRecordSale.Domain\VinylRecordSale.Domain.csproj" />
   </ItemGroup>
 
 </Project>

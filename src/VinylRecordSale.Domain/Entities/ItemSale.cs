@@ -32,5 +32,10 @@ namespace VinylRecordSale.Domain.Entities
             ValidationResult = new ItemSaleValidation().Validate(this);
             return ValidationResult.IsValid;
         }
+
+        public void AddVinylDisc(VinylDisc vinylDisc)
+        {
+            VinylDisc = vinylDisc;
+        }
     }
 }

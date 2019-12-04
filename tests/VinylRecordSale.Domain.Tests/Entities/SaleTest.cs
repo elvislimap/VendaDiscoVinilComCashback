@@ -1,4 +1,5 @@
 ﻿using Bogus;
+using System.Collections.Generic;
 using VinylRecordSale.Domain.Entities;
 using Xunit;
 
@@ -12,6 +13,7 @@ namespace VinylRecordSale.Domain.Tests.Entities
         {
             // Arrange
             var sale = GetSaleValid();
+            sale.AddItemSale(new ItemSale(1, 1, 1, 1, 1, 1));
 
             // Act
             var isValid = sale.IsValid();

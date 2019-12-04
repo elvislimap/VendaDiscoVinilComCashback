@@ -29,7 +29,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra.CrossCutting", "Infra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VinylRecordSale.Infra.CrossCutting.Ioc", "src\VinylRecordSale.Infra.CrossCutting.Ioc\VinylRecordSale.Infra.CrossCutting.Ioc.csproj", "{C93F39C7-7936-4083-9B6C-470B491EAF4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VinylRecordSale.Domain.Tests", "tests\VinylRecordSale.Domain.Tests\VinylRecordSale.Domain.Tests.csproj", "{F6F55DFE-17E5-4D11-AC50-7CA3E3337057}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VinylRecordSale.Domain.Tests", "tests\VinylRecordSale.Domain.Tests\VinylRecordSale.Domain.Tests.csproj", "{F6F55DFE-17E5-4D11-AC50-7CA3E3337057}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VinylRecordSale.Application", "src\VinylRecordSale.Application\VinylRecordSale.Application.csproj", "{5595E8B4-3BE1-49B2-B674-D2CD032BC77B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +67,10 @@ Global
 		{F6F55DFE-17E5-4D11-AC50-7CA3E3337057}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6F55DFE-17E5-4D11-AC50-7CA3E3337057}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6F55DFE-17E5-4D11-AC50-7CA3E3337057}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5595E8B4-3BE1-49B2-B674-D2CD032BC77B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5595E8B4-3BE1-49B2-B674-D2CD032BC77B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5595E8B4-3BE1-49B2-B674-D2CD032BC77B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5595E8B4-3BE1-49B2-B674-D2CD032BC77B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,6 +85,7 @@ Global
 		{6C60A228-1D04-48D9-9A5D-02A7EA42404C} = {55640205-799F-452D-B7F1-B84B5C0905FC}
 		{C93F39C7-7936-4083-9B6C-470B491EAF4E} = {6C60A228-1D04-48D9-9A5D-02A7EA42404C}
 		{F6F55DFE-17E5-4D11-AC50-7CA3E3337057} = {552D2D5B-5F30-43E7-A18F-F4FB152ED274}
+		{5595E8B4-3BE1-49B2-B674-D2CD032BC77B} = {8482D17E-9DCF-4E24-97DA-35716C3B7799}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {886AAACA-9513-43B4-AB83-F55D7608F0C7}

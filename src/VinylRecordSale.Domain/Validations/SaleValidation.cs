@@ -20,6 +20,12 @@ namespace VinylRecordSale.Domain.Validations
             RuleFor(s => s.Date)
                 .NotEqual(DateTime.MinValue).WithMessage("Date invalid")
                 .NotEqual(DateTime.MaxValue).WithMessage("Date invalid");
+
+            RuleFor(s => s.ItemSales)
+                .NotNull().WithMessage("ItemSales is required");
+
+            RuleForEach(s => s.ItemSales)
+                .SetValidator(new ItemSaleValidation());
         }
     }
 }

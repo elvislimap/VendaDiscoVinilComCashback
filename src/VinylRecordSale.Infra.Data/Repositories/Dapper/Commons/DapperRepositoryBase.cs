@@ -4,9 +4,9 @@ using Dommel;
 using VinylRecordSale.Domain.Interfaces.Contexts;
 using VinylRecordSale.Domain.Interfaces.Repositories.Dapper.Common;
 
-namespace VinylRecordSale.Infra.Data.Repositories.Dapper.Common
+namespace VinylRecordSale.Infra.Data.Repositories.Dapper.Commons
 {
-    public class DapperRepositoryBase<TEntity> : IDapperRepositoryBase<TEntity> where TEntity : class
+    public abstract class DapperRepositoryBase<TEntity> : IDapperRepositoryBase<TEntity> where TEntity : class
     {
         private readonly IContextDapper _context;
 

@@ -21,12 +21,17 @@ namespace VinylRecordSale.Domain.Entities
         public decimal Value { get; private set; }
 
         public virtual MusicGenre MusicGenre { get; private set; }
-        public virtual IEnumerable<ItemSale> ItemSales { get; private set; }
+        public virtual IList<ItemSale> ItemSales { get; private set; }
 
         public override bool IsValid()
         {
             ValidationResult = new VinylDiscValidation().Validate(this);
             return ValidationResult.IsValid;
+        }
+
+        public void AddMusicGenre(MusicGenre musicGenre)
+        {
+            MusicGenre = musicGenre;
         }
     }
 }

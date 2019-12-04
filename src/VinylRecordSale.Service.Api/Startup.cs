@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using VinylRecordSale.Infra.CrossCutting.Ioc;
 using VinylRecordSale.Service.Api.Commons;
+using VinylRecordSale.Service.Api.Middlewares;
 
 namespace VinylRecordSale.Service.Api
 {
@@ -27,6 +28,7 @@ namespace VinylRecordSale.Service.Api
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
 
+            app.UseMiddleware<ExceptionMiddleware>();
             app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             app.UseMvc();
         }

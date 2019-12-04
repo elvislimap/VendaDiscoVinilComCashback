@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using VinylRecordSale.Domain.Commons;
 using VinylRecordSale.Domain.Entities;
 using VinylRecordSale.Domain.Enums;
-using VinylRecordSale.Domain.IntegrationValues;
+using VinylRecordSale.Domain.IntegrationObjects;
 using VinylRecordSale.Domain.Interfaces.Integrations;
 
 namespace VinylRecordSale.Infra.Data.Mappings.EntityFramework

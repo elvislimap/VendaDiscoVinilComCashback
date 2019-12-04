@@ -6,7 +6,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using VinylRecordSale.Domain.Commons;
 using VinylRecordSale.Domain.Enums;
-using VinylRecordSale.Domain.IntegrationValues;
+using VinylRecordSale.Domain.IntegrationObjects;
 using VinylRecordSale.Domain.Interfaces.Integrations;
 
 namespace VinylRecordSale.Infra.Integrations.Spotify
