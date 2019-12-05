@@ -8,7 +8,7 @@ using VinylRecordSale.Domain.Services;
 using VinylRecordSale.Domain.ValueObjects;
 using Xunit;
 
-namespace VinylRecordSale.Domain.Tests.Entities.Fixtures
+namespace VinylRecordSale.Domain.Tests.Entities.Config
 {
     [CollectionDefinition(nameof(ConfigCollection))]
     public class ConfigCollection : ICollectionFixture<ConfigTestFixture> { }

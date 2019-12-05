@@ -1,7 +1,7 @@
 ﻿using Bogus;
 using VinylRecordSale.Domain.Commons;
 using VinylRecordSale.Domain.Entities;
-using VinylRecordSale.Domain.Tests.Entities.Fixtures;
+using VinylRecordSale.Domain.Tests.Entities.Config;
 using VinylRecordSale.Domain.Validations;
 using Xunit;
 

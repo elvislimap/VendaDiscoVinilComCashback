@@ -38,5 +38,10 @@ namespace VinylRecordSale.Domain.Services
 
             return false;
         }
+
+        protected bool HaveNotification()
+        {
+            return _notificationService.HaveNotification();
+        }
     }
 }

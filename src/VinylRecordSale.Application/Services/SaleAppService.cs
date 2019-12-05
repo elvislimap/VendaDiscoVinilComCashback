@@ -11,16 +11,16 @@ namespace VinylRecordSale.Application.Services
 {
     public class SaleAppService : BaseAppService, ISaleAppService
     {
-        private readonly ISaleEFRepository _saleEFRepository;
+        private readonly ISaleEFRepository _saleEfRepository;
         private readonly IClientDapperRepository _clientDapperRepository;
         private readonly IItemSaleService _itemSaleService;
 
         public SaleAppService(INotificationService notificationService,
-            ISaleEFRepository saleEFRepository,
+            ISaleEFRepository saleEfRepository,
             IClientDapperRepository clientDapperRepository,
             IItemSaleService itemSaleService) : base(notificationService)
         {
-            _saleEFRepository = saleEFRepository;
+            _saleEfRepository = saleEfRepository;
             _clientDapperRepository = clientDapperRepository;
             _itemSaleService = itemSaleService;
         }
@@ -45,7 +45,7 @@ namespace VinylRecordSale.Application.Services
             sale.TotalValue = sale.ItemSales.Sum(i => i.Value);
             sale.CashbackTotal = sale.ItemSales.Sum(i => i.Cashback);
 
-            _saleEFRepository.Insert(sale);
+            _saleEfRepository.Insert(sale);
 
             return sale;
         }

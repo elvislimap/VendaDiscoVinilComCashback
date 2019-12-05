@@ -4,11 +4,11 @@ using VinylRecordSale.Infra.Data.Contexts;
 
 namespace VinylRecordSale.Infra.Data.Repositories.EntityFramework.Commons
 {
-    public abstract class EFRepositoryBase : IEFRepositoryBase
+    public abstract class EfRepositoryBase : IEFRepositoryBase
     {
         private readonly ContextEf _context;
 
-        public EFRepositoryBase(ContextEf context)
+        protected EfRepositoryBase(ContextEf context)
         {
             _context = context;
         }

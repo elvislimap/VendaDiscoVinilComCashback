@@ -41,7 +41,7 @@ namespace VinylRecordSale.Infra.CrossCutting.Ioc
 
             #region EF repositories
 
-            services.AddScoped<ISaleEFRepository, SaleEFRepository>();
+            services.AddScoped<ISaleEFRepository, SaleEfRepository>();
 
             #endregion
 

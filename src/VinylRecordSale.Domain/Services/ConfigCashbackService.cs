@@ -21,13 +21,11 @@ namespace VinylRecordSale.Domain.Services
         {
             var configCashback = await _configCashbackDapperRepository.GetById(musicGenreId);
 
-            if (!ConfigCashback.Exists(configCashback))
-            {
-                Notify($"ConfigCashback with music genre id: {musicGenreId} not exists");
-                return 0;
-            }
+            if (ConfigCashback.Exists(configCashback))
+                return GetPercentageByDayOfWeek(configCashback);
 
-            return GetPercentageByDayOfWeek(configCashback);
+            Notify($"ConfigCashback with music genre id: {musicGenreId} not exists");
+            return 0;
         }
 
 
@@ -47,8 +45,10 @@ namespace VinylRecordSale.Domain.Services
                     return configCashback.PercentageThursday;
                 case DayOfWeek.Friday:
                     return configCashback.PercentageFriday;
-                default:
+                case DayOfWeek.Saturday:
                     return configCashback.PercentageSaturday;
+                default:
+                    return 0;
             }
         }
     }

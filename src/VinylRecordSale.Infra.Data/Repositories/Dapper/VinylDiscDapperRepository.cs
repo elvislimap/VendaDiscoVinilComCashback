@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using VinylRecordSale.Domain.Entities;
 using VinylRecordSale.Domain.Interfaces.Contexts;
 using VinylRecordSale.Domain.Interfaces.Repositories.Dapper;
+using VinylRecordSale.Infra.Data.Repositories.Commons;
 using VinylRecordSale.Infra.Data.Repositories.Dapper.Commons;
 
 namespace VinylRecordSale.Infra.Data.Repositories.Dapper

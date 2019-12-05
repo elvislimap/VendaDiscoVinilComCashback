@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29519.87
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Services", "1-Services", "{4E7420B1-2791-4DB1-BAC8-038509251F31}"
 EndProject
@@ -31,7 +31,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VinylRecordSale.Infra.Cross
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VinylRecordSale.Domain.Tests", "tests\VinylRecordSale.Domain.Tests\VinylRecordSale.Domain.Tests.csproj", "{F6F55DFE-17E5-4D11-AC50-7CA3E3337057}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VinylRecordSale.Application", "src\VinylRecordSale.Application\VinylRecordSale.Application.csproj", "{5595E8B4-3BE1-49B2-B674-D2CD032BC77B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VinylRecordSale.Application", "src\VinylRecordSale.Application\VinylRecordSale.Application.csproj", "{5595E8B4-3BE1-49B2-B674-D2CD032BC77B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VinylRecordSale.Application.Tests", "tests\VinylRecordSale.Application.Tests\VinylRecordSale.Application.Tests.csproj", "{CECDC9F8-2195-40E2-8259-38FB0EF61EDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VinylRecordSale.Infra.Data.Tests", "tests\VinylRecordSale.Infra.Data.Tests\VinylRecordSale.Infra.Data.Tests.csproj", "{FC34880C-27AC-4318-A5BB-E89321656D8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VinylRecordSale.Service.Api.Test", "tests\VinylRecordSale.Service.Api.Test\VinylRecordSale.Service.Api.Test.csproj", "{D0C44C19-CCCF-450E-80B0-0A934E7AFB9B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +77,18 @@ Global
 		{5595E8B4-3BE1-49B2-B674-D2CD032BC77B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5595E8B4-3BE1-49B2-B674-D2CD032BC77B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5595E8B4-3BE1-49B2-B674-D2CD032BC77B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CECDC9F8-2195-40E2-8259-38FB0EF61EDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CECDC9F8-2195-40E2-8259-38FB0EF61EDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CECDC9F8-2195-40E2-8259-38FB0EF61EDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CECDC9F8-2195-40E2-8259-38FB0EF61EDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC34880C-27AC-4318-A5BB-E89321656D8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC34880C-27AC-4318-A5BB-E89321656D8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC34880C-27AC-4318-A5BB-E89321656D8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC34880C-27AC-4318-A5BB-E89321656D8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0C44C19-CCCF-450E-80B0-0A934E7AFB9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0C44C19-CCCF-450E-80B0-0A934E7AFB9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0C44C19-CCCF-450E-80B0-0A934E7AFB9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0C44C19-CCCF-450E-80B0-0A934E7AFB9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,6 +104,9 @@ Global
 		{C93F39C7-7936-4083-9B6C-470B491EAF4E} = {6C60A228-1D04-48D9-9A5D-02A7EA42404C}
 		{F6F55DFE-17E5-4D11-AC50-7CA3E3337057} = {552D2D5B-5F30-43E7-A18F-F4FB152ED274}
 		{5595E8B4-3BE1-49B2-B674-D2CD032BC77B} = {8482D17E-9DCF-4E24-97DA-35716C3B7799}
+		{CECDC9F8-2195-40E2-8259-38FB0EF61EDB} = {8482D17E-9DCF-4E24-97DA-35716C3B7799}
+		{FC34880C-27AC-4318-A5BB-E89321656D8F} = {561F5846-A05B-4D24-90D9-66BF4BE9C688}
+		{D0C44C19-CCCF-450E-80B0-0A934E7AFB9B} = {4E7420B1-2791-4DB1-BAC8-038509251F31}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {886AAACA-9513-43B4-AB83-F55D7608F0C7}

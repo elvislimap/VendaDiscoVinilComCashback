@@ -5,11 +5,11 @@ using VinylRecordSale.Infra.Data.Repositories.EntityFramework.Commons;
 
 namespace VinylRecordSale.Infra.Data.Repositories.EntityFramework
 {
-    public class SaleEFRepository : EFRepositoryBase, ISaleEFRepository
+    public class SaleEfRepository : EfRepositoryBase, ISaleEFRepository
     {
         private readonly ContextEf _contextEf;
 
-        public SaleEFRepository(ContextEf contextEf) : base(contextEf)
+        public SaleEfRepository(ContextEf contextEf) : base(contextEf)
         {
             _contextEf = contextEf;
         }

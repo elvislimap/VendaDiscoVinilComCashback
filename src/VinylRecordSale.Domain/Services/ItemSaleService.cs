@@ -22,7 +22,7 @@ namespace VinylRecordSale.Domain.Services
         }
 
 
-        public async Task CalculateProperties(IEnumerable<ItemSale> itemSales)
+        public async Task CalculateProperties(IList<ItemSale> itemSales)
         {
             if (!itemSales.Any())
             {

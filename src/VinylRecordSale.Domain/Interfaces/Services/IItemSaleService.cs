@@ -6,6 +6,6 @@ namespace VinylRecordSale.Domain.Interfaces.Services
 {
     public interface IItemSaleService
     {
-        Task CalculateProperties(IEnumerable<ItemSale> itemSales);
+        Task CalculateProperties(IList<ItemSale> itemSales);
     }
 }

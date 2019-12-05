@@ -1,4 +1,4 @@
-﻿namespace VinylRecordSale.Infra.Data.Repositories.Dapper.Commons
+﻿namespace VinylRecordSale.Infra.Data.Repositories.Commons
 {
     public class Util
     {
