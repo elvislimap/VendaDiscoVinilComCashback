@@ -32,8 +32,6 @@ namespace VinylRecordSale.Infra.Data.Mappings.EntityFramework
             builder.Property(v => v.Name).HasColumnType("varchar(200)").HasMaxLength(200).IsRequired();
             builder.Property(v => v.Value).HasColumnType("decimal(10,2)").IsRequired();
 
-            builder.Ignore(v => v.ValidationResult);
-
             builder.HasData(GetVinylDiscs());
         }
 

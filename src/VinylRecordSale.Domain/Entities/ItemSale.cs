@@ -1,6 +1,4 @@
-﻿using VinylRecordSale.Domain.Validations;
-
-namespace VinylRecordSale.Domain.Entities
+﻿namespace VinylRecordSale.Domain.Entities
 {
     public class ItemSale : Entity
     {
@@ -26,15 +24,19 @@ namespace VinylRecordSale.Domain.Entities
         public virtual Sale Sale { get; set; }
         public virtual VinylDisc VinylDisc { get; set; }
 
-        public override bool IsValid()
-        {
-            ValidationResult = new ItemSaleValidation().Validate(this);
-            return ValidationResult.IsValid;
-        }
-
         public void SetVinylDisc(VinylDisc vinylDisc)
         {
             VinylDisc = vinylDisc;
+        }
+
+        public void SetValue(int quantity, decimal unitValue)
+        {
+            Value = quantity * unitValue;
+        }
+
+        public void SetCashback(decimal value, decimal percentage)
+        {
+            Cashback = value * (percentage / 100);
         }
     }
 }

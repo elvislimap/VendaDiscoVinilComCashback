@@ -1,6 +1,4 @@
-﻿using VinylRecordSale.Domain.Validations;
-
-namespace VinylRecordSale.Domain.Entities
+﻿namespace VinylRecordSale.Domain.Entities
 {
     public class ConfigCashback : Entity
     {
@@ -29,10 +27,9 @@ namespace VinylRecordSale.Domain.Entities
         public decimal PercentageFriday { get; set; }
         public decimal PercentageSaturday { get; set; }
 
-        public override bool IsValid()
+        public static bool Exists(ConfigCashback configCashback)
         {
-            ValidationResult = new ConfigCashbackValidation().Validate(this);
-            return ValidationResult.IsValid;
+            return (configCashback?.MusicGenreId ?? 0) > 0;
         }
     }
 }

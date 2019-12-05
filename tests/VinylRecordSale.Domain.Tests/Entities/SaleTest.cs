@@ -1,11 +1,22 @@
 ﻿using Bogus;
 using VinylRecordSale.Domain.Entities;
+using VinylRecordSale.Domain.Tests.Entities.Fixtures;
+using VinylRecordSale.Domain.Validations;
 using Xunit;
 
 namespace VinylRecordSale.Domain.Tests.Entities
 {
+    [Collection(nameof(ConfigCollection))]
     public class SaleTestTest
     {
+        private readonly ConfigTestFixture _configTestFixture;
+
+        public SaleTestTest(ConfigTestFixture configTestFixture)
+        {
+            _configTestFixture = configTestFixture;
+        }
+
+
         [Fact(DisplayName = "New sale valid")]
         [Trait("Category", "Entities")]
         public void Sale_NewSale_Valid()
@@ -15,11 +26,11 @@ namespace VinylRecordSale.Domain.Tests.Entities
             sale.AddItemSale(new ItemSale(1, 1, 1, 1, 1, 1));
 
             // Act
-            var isValid = sale.IsValid();
+            var isValid = _configTestFixture.ExecuteValidation(new SaleValidation(), sale);
 
             // Assert
             Assert.True(isValid);
-            Assert.Empty(sale.ValidationResult.Errors);
+            Assert.False(_configTestFixture.HaveNotification());
         }
 
         [Fact(DisplayName = "New sale invalid")]
@@ -30,11 +41,11 @@ namespace VinylRecordSale.Domain.Tests.Entities
             var sale = GetSaleInvalid();
 
             // Act
-            var isValid = sale.IsValid();
+            var isValid = _configTestFixture.ExecuteValidation(new SaleValidation(), sale);
 
             // Assert
             Assert.False(isValid);
-            Assert.NotEmpty(sale.ValidationResult.Errors);
+            Assert.True(_configTestFixture.HaveNotification());
         }
 
 

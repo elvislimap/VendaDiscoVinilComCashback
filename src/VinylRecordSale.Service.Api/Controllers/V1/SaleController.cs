@@ -1,40 +1,45 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using VinylRecordSale.Application.Interfaces;
 using VinylRecordSale.Domain.Entities;
-using VinylRecordSale.Service.Api.Commons;
+using VinylRecordSale.Domain.Interfaces.Repositories.Dapper;
+using VinylRecordSale.Domain.Interfaces.Services;
 
 namespace VinylRecordSale.Service.Api.Controllers.V1
 {
     [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/sale")]
-    public class SaleController : ControllerBase
+    public class SaleController : MainController
     {
         private readonly ISaleAppService _saleAppService;
+        private readonly ISaleDapperRepository _saleDapperRepository;
 
-        public SaleController(ISaleAppService saleAppService)
+        public SaleController(INotificationService notificationService, ISaleAppService saleAppService,
+            ISaleDapperRepository saleDapperRepository) : base(notificationService)
         {
             _saleAppService = saleAppService;
+            _saleDapperRepository = saleDapperRepository;
         }
 
 
         [HttpGet("GetById/{saleId}")]
-        public Task<ObjectResult> GetById(int saleId)
+        public async Task<ActionResult<Sale>> GetById(int saleId)
         {
-            return _saleAppService.Get(saleId).TaskResult();
+            return CustomResponse(await _saleDapperRepository.GetById(saleId));
         }
 
         [HttpGet("GetPaged/{page}/{initialDate}/{finalDate}")]
-        public Task<ObjectResult> GetPaged(int page, DateTime initialDate, DateTime finalDate)
+        public async Task<ActionResult<IEnumerable<Sale>>> GetPaged(int page, DateTime initialDate, DateTime finalDate)
         {
-            return _saleAppService.GetPaged(page, initialDate, finalDate).TaskResult();
+            return CustomResponse(await _saleDapperRepository.Get(page, initialDate, finalDate));
         }
 
         [HttpPost("Insert")]
-        public Task<ObjectResult> Insert([FromBody] Sale sale)
+        public async Task<ActionResult> Insert([FromBody] Sale sale)
         {
-            return _saleAppService.Insert(sale).TaskResult();
+            return CustomResponse(await _saleAppService.Insert(sale));
         }
     }
 }

@@ -13,8 +13,6 @@ namespace VinylRecordSale.Infra.Data.Mappings.EntityFramework
             builder.Property(m => m.MusicGenreId).HasColumnType("int");
             builder.Property(m => m.Description).HasColumnType("varchar(50)").HasMaxLength(50).IsRequired();
 
-            builder.Ignore(m => m.ValidationResult);
-
             builder.HasData(
                 new MusicGenre(1, "Pop"),
                 new MusicGenre(2, "Mpb"),

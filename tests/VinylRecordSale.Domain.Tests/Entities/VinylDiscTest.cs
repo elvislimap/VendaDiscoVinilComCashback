@@ -1,11 +1,23 @@
 ﻿using Bogus;
 using VinylRecordSale.Domain.Entities;
+using VinylRecordSale.Domain.Tests.Entities.Fixtures;
+using VinylRecordSale.Domain.Validations;
 using Xunit;
 
 namespace VinylRecordSale.Domain.Tests.Entities
 {
+    [Collection(nameof(ConfigCollection))]
     public class VinylDiscTest
     {
+        private readonly ConfigTestFixture _configTestFixture;
+
+        public VinylDiscTest(ConfigTestFixture configTestFixture)
+        {
+            _configTestFixture = configTestFixture;
+        }
+
+
+
         [Fact(DisplayName = "New vinyl disc valid")]
         [Trait("Category", "Entities")]
         public void VinylDisc_NewVinylDisc_Valid()
@@ -14,11 +26,11 @@ namespace VinylRecordSale.Domain.Tests.Entities
             var vinylDisc = GetVinylDiscValid();
 
             // Act
-            var isValid = vinylDisc.IsValid();
+            var isValid = _configTestFixture.ExecuteValidation(new VinylDiscValidation(), vinylDisc);
 
             // Assert
             Assert.True(isValid);
-            Assert.Empty(vinylDisc.ValidationResult.Errors);
+            Assert.False(_configTestFixture.HaveNotification());
         }
 
         [Fact(DisplayName = "New vinyl disc invalid")]
@@ -29,11 +41,11 @@ namespace VinylRecordSale.Domain.Tests.Entities
             var vinylDisc = GetVinylDiscInvalid();
 
             // Act
-            var isValid = vinylDisc.IsValid();
+            var isValid = _configTestFixture.ExecuteValidation(new VinylDiscValidation(), vinylDisc);
 
             // Assert
             Assert.False(isValid);
-            Assert.NotEmpty(vinylDisc.ValidationResult.Errors);
+            Assert.True(_configTestFixture.HaveNotification());
         }
 
 

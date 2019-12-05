@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using VinylRecordSale.Domain.Entities;
 using VinylRecordSale.Domain.Interfaces.Contexts;
 using VinylRecordSale.Domain.Interfaces.Repositories.Dapper;
@@ -18,21 +19,15 @@ namespace VinylRecordSale.Infra.Data.Repositories.Dapper
             _context = context;
         }
 
-        public IEnumerable<Sale> Get(int page, DateTime initialDate, DateTime finalDate)
+        public async Task<IEnumerable<Sale>> Get(int page, DateTime initialDate, DateTime finalDate)
         {
-            var saleDictionary = new Dictionary<int, Sale>();
-
-            return _context.Connection.Query<Sale, ItemSale, VinylDisc, Sale>(
+            return await _context.Connection.QueryAsync<Sale>(
                 @"SELECT *
-                  FROM VinylRecordSale.Sales s
-                  INNER JOIN VinylRecordSale.ItemSales i ON s.SaleId = i.SaleId
-                  INNER JOIN VinylRecordSale.VinylDiscs v ON i.VinylDiscId = v.VinylDiscId
-                  WHERE s.Date BETWEEN @initDate AND @finDate
-                  ORDER BY s.Date DESC
+                  FROM VinylRecordSale.Sales
+                  WHERE Date BETWEEN @initDate AND @finDate
+                  ORDER BY Date DESC
                   OFFSET @skip ROWS
                   FETCH NEXT @take ROWS ONLY;",
-                map: (sale, itemSale, vinylDisc) => MapSaleDapperQuery(saleDictionary, sale, itemSale, vinylDisc),
-                splitOn: "SaleId, VinylDiscId",
                 param: new
                 {
                     initDate = initialDate,
@@ -42,19 +37,19 @@ namespace VinylRecordSale.Infra.Data.Repositories.Dapper
                 });
         }
 
-        public override Sale GetById(int id)
+        public override async Task<Sale> GetById(int id)
         {
             var saleDictionary = new Dictionary<int, Sale>();
 
-            return _context.Connection.Query<Sale, ItemSale, VinylDisc, Sale>(
-                @"SELECT TOP(1) *
+            return (await _context.Connection.QueryAsync<Sale, ItemSale, VinylDisc, Sale>(
+                @"SELECT *
                   FROM VinylRecordSale.Sales s
                   INNER JOIN VinylRecordSale.ItemSales i ON s.SaleId = i.SaleId
                   INNER JOIN VinylRecordSale.VinylDiscs v ON i.VinylDiscId = v.VinylDiscId
                   WHERE s.SaleId = @saleId;",
                 map: (sale, itemSale, vinylDisc) => MapSaleDapperQuery(saleDictionary, sale, itemSale, vinylDisc),
-                splitOn: "SaleId, VinylDiscId",
-                param: new {saleId = id}).FirstOrDefault();
+                splitOn: "SaleId, ItemSaleId, VinylDiscId",
+                param: new { saleId = id })).FirstOrDefault();
         }
 
 

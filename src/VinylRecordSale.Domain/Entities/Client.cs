@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using VinylRecordSale.Domain.Validations;
 
 namespace VinylRecordSale.Domain.Entities
 {
@@ -19,10 +18,9 @@ namespace VinylRecordSale.Domain.Entities
         public string Email { get; set; }
         public virtual IList<Sale> Sales { get; set; }
 
-        public override bool IsValid()
+        public static bool Exists(Client client)
         {
-            ValidationResult = new ClientValidation().Validate(this);
-            return ValidationResult.IsValid;
+            return (client?.ClientId ?? 0) > 0;
         }
     }
 }

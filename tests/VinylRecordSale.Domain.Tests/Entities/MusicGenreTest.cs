@@ -1,11 +1,22 @@
 ﻿using Bogus;
 using VinylRecordSale.Domain.Entities;
+using VinylRecordSale.Domain.Tests.Entities.Fixtures;
+using VinylRecordSale.Domain.Validations;
 using Xunit;
 
 namespace VinylRecordSale.Domain.Tests.Entities
 {
+    [Collection(nameof(ConfigCollection))]
     public class MusicGenreTest
     {
+        private readonly ConfigTestFixture _configTestFixture;
+
+        public MusicGenreTest(ConfigTestFixture configTestFixture)
+        {
+            _configTestFixture = configTestFixture;
+        }
+
+
         [Fact(DisplayName = "New music genre valid")]
         [Trait("Category", "Entities")]
         public void MusicGenre_NewMusicGenre_Valid()
@@ -14,11 +25,11 @@ namespace VinylRecordSale.Domain.Tests.Entities
             var musicGenre = GetMusicGenreValid();
 
             // Act
-            var isValid = musicGenre.IsValid();
+            var isValid = _configTestFixture.ExecuteValidation(new MusicGenreValidation(), musicGenre);
 
             // Assert
             Assert.True(isValid);
-            Assert.Empty(musicGenre.ValidationResult.Errors);
+            Assert.False(_configTestFixture.HaveNotification());
         }
 
         [Fact(DisplayName = "New music genre invalid")]
@@ -29,11 +40,11 @@ namespace VinylRecordSale.Domain.Tests.Entities
             var musicGenre = GetMusicGenreInvalid();
 
             // Act
-            var isValid = musicGenre.IsValid();
+            var isValid = _configTestFixture.ExecuteValidation(new MusicGenreValidation(), musicGenre);
 
             // Assert
             Assert.False(isValid);
-            Assert.NotEmpty(musicGenre.ValidationResult.Errors);
+            Assert.True(_configTestFixture.HaveNotification());
         }
 
 

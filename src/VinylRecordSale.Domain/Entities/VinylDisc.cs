@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using VinylRecordSale.Domain.Validations;
 
 namespace VinylRecordSale.Domain.Entities
 {
@@ -22,15 +21,14 @@ namespace VinylRecordSale.Domain.Entities
         public virtual MusicGenre MusicGenre { get; set; }
         public virtual IList<ItemSale> ItemSales { get; set; }
 
-        public override bool IsValid()
-        {
-            ValidationResult = new VinylDiscValidation().Validate(this);
-            return ValidationResult.IsValid;
-        }
-
         public void SetMusicGenre(MusicGenre musicGenre)
         {
             MusicGenre = musicGenre;
+        }
+
+        public static bool Exists(VinylDisc vinylDisc)
+        {
+            return (vinylDisc?.VinylDiscId ?? 0) > 0;
         }
     }
 }

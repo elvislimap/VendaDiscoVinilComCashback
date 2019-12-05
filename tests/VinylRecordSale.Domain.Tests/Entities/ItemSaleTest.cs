@@ -1,11 +1,22 @@
 ﻿using Bogus;
 using VinylRecordSale.Domain.Entities;
+using VinylRecordSale.Domain.Tests.Entities.Fixtures;
+using VinylRecordSale.Domain.Validations;
 using Xunit;
 
 namespace VinylRecordSale.Domain.Tests.Entities
 {
+    [Collection(nameof(ConfigCollection))]
     public class ItemSaleTestTest
     {
+        private readonly ConfigTestFixture _configTestFixture;
+
+        public ItemSaleTestTest(ConfigTestFixture configTestFixture)
+        {
+            _configTestFixture = configTestFixture;
+        }
+
+
         [Fact(DisplayName = "New item sale valid")]
         [Trait("Category", "Entities")]
         public void ItemSale_NewItemSale_Valid()
@@ -14,11 +25,11 @@ namespace VinylRecordSale.Domain.Tests.Entities
             var itemSale = GetItemSaleValid();
 
             // Act
-            var isValid = itemSale.IsValid();
+            var isValid = _configTestFixture.ExecuteValidation(new ItemSaleValidation(), itemSale);
 
             // Assert
             Assert.True(isValid);
-            Assert.Empty(itemSale.ValidationResult.Errors);
+            Assert.False(_configTestFixture.HaveNotification());
         }
 
         [Fact(DisplayName = "New item sale invalid")]
@@ -29,11 +40,11 @@ namespace VinylRecordSale.Domain.Tests.Entities
             var itemSale = GetItemSaleInvalid();
 
             // Act
-            var isValid = itemSale.IsValid();
+            var isValid = _configTestFixture.ExecuteValidation(new ItemSaleValidation(), itemSale);
 
             // Assert
             Assert.False(isValid);
-            Assert.NotEmpty(itemSale.ValidationResult.Errors);
+            Assert.True(_configTestFixture.HaveNotification());
         }
 
 

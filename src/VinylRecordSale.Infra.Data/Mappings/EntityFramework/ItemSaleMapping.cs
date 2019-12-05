@@ -19,8 +19,6 @@ namespace VinylRecordSale.Infra.Data.Mappings.EntityFramework
             builder.Property(i => i.Quantity).HasColumnType("int").IsRequired();
             builder.Property(i => i.Value).HasColumnType("decimal(10,2)").IsRequired();
             builder.Property(i => i.Cashback).HasColumnType("decimal(10,2)").IsRequired();
-
-            builder.Ignore(i => i.ValidationResult);
         }
     }
 }

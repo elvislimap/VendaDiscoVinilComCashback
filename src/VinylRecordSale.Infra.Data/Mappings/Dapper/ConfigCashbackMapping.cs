@@ -9,7 +9,6 @@ namespace VinylRecordSale.Infra.Data.Mappings.Dapper
         {
             ToTable("VinylRecordSale.ConfigCashbacks");
             Map(c => c.MusicGenreId).IsKey();
-            Map(c => c.ValidationResult).Ignore();
         }
     }
 }

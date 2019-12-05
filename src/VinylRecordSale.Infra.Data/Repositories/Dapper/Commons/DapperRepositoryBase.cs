@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Threading.Tasks;
 using Dommel;
 using VinylRecordSale.Domain.Interfaces.Contexts;
 using VinylRecordSale.Domain.Interfaces.Repositories.Dapper.Common;
@@ -16,9 +17,9 @@ namespace VinylRecordSale.Infra.Data.Repositories.Dapper.Commons
         }
 
 
-        public virtual TEntity GetById(int id)
+        public virtual async Task<TEntity> GetById(int id)
         {
-            return _context.Connection.Get<TEntity>(id);
+            return await _context.Connection.GetAsync<TEntity>(id);
         }
 
         public void Dispose()

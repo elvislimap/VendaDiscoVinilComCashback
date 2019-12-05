@@ -20,8 +20,6 @@ namespace VinylRecordSale.Infra.Data.Mappings.EntityFramework
             builder.Property(c => c.PercentageFriday).HasColumnType("decimal(10,2)").HasDefaultValue(0M).IsRequired();
             builder.Property(c => c.PercentageSaturday).HasColumnType("decimal(10,2)").HasDefaultValue(0M).IsRequired();
 
-            builder.Ignore(c => c.ValidationResult);
-
             builder.HasData(
                 new ConfigCashback((int)MusicGenreEnum.Pop, 25, 7, 6, 2, 10, 15, 20),
                 new ConfigCashback((int)MusicGenreEnum.Mpb, 30, 5, 10, 15, 20, 25, 30),

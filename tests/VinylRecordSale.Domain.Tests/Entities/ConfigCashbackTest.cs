@@ -1,11 +1,22 @@
 ﻿using Bogus;
 using VinylRecordSale.Domain.Entities;
+using VinylRecordSale.Domain.Tests.Entities.Fixtures;
+using VinylRecordSale.Domain.Validations;
 using Xunit;
 
 namespace VinylRecordSale.Domain.Tests.Entities
 {
+    [Collection(nameof(ConfigCollection))]
     public class ConfigCashbackTest
     {
+        private readonly ConfigTestFixture _configTestFixture;
+
+        public ConfigCashbackTest(ConfigTestFixture configTestFixture)
+        {
+            _configTestFixture = configTestFixture;
+        }
+
+
         [Fact(DisplayName = "New config cashback valid")]
         [Trait("Category", "Entities")]
         public void ConfigCashback_NewConfigCashback_Valid()
@@ -14,11 +25,12 @@ namespace VinylRecordSale.Domain.Tests.Entities
             var configCashback = GetConfigCashbackValid();
 
             // Act
-            var isValid = configCashback.IsValid();
+            var isValid = _configTestFixture
+                .ExecuteValidation(new ConfigCashbackValidation(), configCashback);
 
             // Assert
             Assert.True(isValid);
-            Assert.Empty(configCashback.ValidationResult.Errors);
+            Assert.False(_configTestFixture.HaveNotification());
         }
 
         [Fact(DisplayName = "New config cashback invalid")]
@@ -29,11 +41,12 @@ namespace VinylRecordSale.Domain.Tests.Entities
             var configCashback = GetConfigCashbackInvalid();
 
             // Act
-            var isValid = configCashback.IsValid();
+            var isValid = _configTestFixture
+                .ExecuteValidation(new ConfigCashbackValidation(), configCashback);
 
             // Assert
             Assert.False(isValid);
-            Assert.NotEmpty(configCashback.ValidationResult.Errors);
+            Assert.True(_configTestFixture.HaveNotification());
         }
 
 

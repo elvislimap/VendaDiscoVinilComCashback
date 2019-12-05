@@ -9,7 +9,6 @@ namespace VinylRecordSale.Infra.Data.Mappings.Dapper
         {
             ToTable("VinylRecordSale.MusicGenres");
             Map(m => m.MusicGenreId).IsKey();
-            Map(m => m.ValidationResult).Ignore();
         }
     }
 }

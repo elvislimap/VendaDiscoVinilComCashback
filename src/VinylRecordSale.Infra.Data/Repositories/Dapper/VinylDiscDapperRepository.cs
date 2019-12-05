@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using VinylRecordSale.Domain.Entities;
 using VinylRecordSale.Domain.Interfaces.Contexts;
 using VinylRecordSale.Domain.Interfaces.Repositories.Dapper;
@@ -16,9 +17,9 @@ namespace VinylRecordSale.Infra.Data.Repositories.Dapper
             _context = context;
         }
 
-        public IEnumerable<VinylDisc> Get(int page, int musicGenreId)
+        public async Task<IEnumerable<VinylDisc>> Get(int page, int musicGenreId)
         {
-            return _context.Connection.Query<VinylDisc, MusicGenre, VinylDisc>(
+            return await _context.Connection.QueryAsync<VinylDisc, MusicGenre, VinylDisc>(
                 @"SELECT *
                   FROM VinylRecordSale.VinylDiscs v
                   INNER JOIN VinylRecordSale.MusicGenres m ON v.MusicGenreId = m.MusicGenreId
@@ -31,7 +32,7 @@ namespace VinylRecordSale.Infra.Data.Repositories.Dapper
                     vinylMusic.SetMusicGenre(musicGenre);
                     return vinylMusic;
                 },
-                splitOn: "MusicGenreId, MusicGenreId",
+                splitOn: "VinylDiscsId, MusicGenreId",
                 param: new { genreId = musicGenreId, skip = Util.GetSkip(page), take = Util.Take });
         }
     }

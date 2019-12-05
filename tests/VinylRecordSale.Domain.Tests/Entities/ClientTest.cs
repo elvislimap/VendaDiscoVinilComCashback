@@ -1,12 +1,23 @@
 ﻿using Bogus;
 using VinylRecordSale.Domain.Commons;
 using VinylRecordSale.Domain.Entities;
+using VinylRecordSale.Domain.Tests.Entities.Fixtures;
+using VinylRecordSale.Domain.Validations;
 using Xunit;
 
 namespace VinylRecordSale.Domain.Tests.Entities
 {
+    [Collection(nameof(ConfigCollection))]
     public class ClientTest
     {
+        private readonly ConfigTestFixture _configTestFixture;
+
+        public ClientTest(ConfigTestFixture configTestFixture)
+        {
+            _configTestFixture = configTestFixture;
+        }
+
+
         [Fact(DisplayName = "New client valid")]
         [Trait("Category", "Entities")]
         public void Client_NewClient_Valid()
@@ -15,11 +26,11 @@ namespace VinylRecordSale.Domain.Tests.Entities
             var client = GetClientValid();
 
             // Act
-            var isValid = client.IsValid();
+            var isValid = _configTestFixture.ExecuteValidation(new ClientValidation(), client);
 
             // Assert
             Assert.True(isValid);
-            Assert.Empty(client.ValidationResult.Errors);
+            Assert.False(_configTestFixture.HaveNotification());
         }
 
         [Fact(DisplayName = "New client invalid")]
@@ -30,11 +41,11 @@ namespace VinylRecordSale.Domain.Tests.Entities
             var client = GetClientInvalid();
 
             // Act
-            var isValid = client.IsValid();
+            var isValid = _configTestFixture.ExecuteValidation(new ClientValidation(), client);
 
             // Assert
             Assert.False(isValid);
-            Assert.NotEmpty(client.ValidationResult.Errors);
+            Assert.True(_configTestFixture.HaveNotification());
         }
 
 

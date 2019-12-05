@@ -1,45 +1,53 @@
-﻿using System;
+﻿using System.Linq;
+using System.Threading.Tasks;
 using VinylRecordSale.Application.Interfaces;
 using VinylRecordSale.Domain.Entities;
 using VinylRecordSale.Domain.Interfaces.Repositories.Dapper;
+using VinylRecordSale.Domain.Interfaces.Repositories.EntityFramework;
 using VinylRecordSale.Domain.Interfaces.Services;
-using VinylRecordSale.Domain.ValueObjects;
+using VinylRecordSale.Domain.Validations;
 
 namespace VinylRecordSale.Application.Services
 {
-    public class SaleAppService : ISaleAppService
+    public class SaleAppService : BaseAppService, ISaleAppService
     {
-        private readonly ISaleDapperRepository _saleDapperRepository;
-        private readonly ISaleService _saleService;
+        private readonly ISaleEFRepository _saleEFRepository;
+        private readonly IClientDapperRepository _clientDapperRepository;
+        private readonly IItemSaleService _itemSaleService;
 
-        public SaleAppService(ISaleDapperRepository saleDapperRepository, ISaleService saleService)
+        public SaleAppService(INotificationService notificationService,
+            ISaleEFRepository saleEFRepository,
+            IClientDapperRepository clientDapperRepository,
+            IItemSaleService itemSaleService) : base(notificationService)
         {
-            _saleDapperRepository = saleDapperRepository;
-            _saleService = saleService;
+            _saleEFRepository = saleEFRepository;
+            _clientDapperRepository = clientDapperRepository;
+            _itemSaleService = itemSaleService;
         }
 
 
-        public Result Insert(Sale sale)
+        public async Task<Sale> Insert(Sale sale)
         {
             sale.SetDateNow();
 
-            if (!sale.IsValid())
-                return new Result(sale.ValidationResult, false);
+            if (!ExecuteValidation(new SaleValidation(), sale)) return null;
 
-            _saleService.Insert(sale);
-            var ok = sale.ValidationResult?.IsValid ?? true;
+            if (!Client.Exists(await _clientDapperRepository.GetById(sale.ClientId)))
+            {
+                Notify("Client not exists");
+                return null;
+            }
 
-            return new Result(ok ? sale : sale.ValidationResult as object, ok);
-        }
+            await _itemSaleService.CalculateProperties(sale.ItemSales);
 
-        public Result Get(int saleId)
-        {
-            return new Result(_saleDapperRepository.GetById(saleId));
-        }
+            if (HaveNotification()) return null;
 
-        public Result GetPaged(int page, DateTime initialDate, DateTime finalDate)
-        {
-            return new Result(_saleDapperRepository.Get(page, initialDate, finalDate));
+            sale.TotalValue = sale.ItemSales.Sum(i => i.Value);
+            sale.CashbackTotal = sale.ItemSales.Sum(i => i.Cashback);
+
+            _saleEFRepository.Insert(sale);
+
+            return sale;
         }
     }
 }

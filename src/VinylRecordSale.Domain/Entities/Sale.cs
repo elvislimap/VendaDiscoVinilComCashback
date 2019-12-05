@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using VinylRecordSale.Domain.Validations;
 
 namespace VinylRecordSale.Domain.Entities
 {
@@ -26,14 +25,9 @@ namespace VinylRecordSale.Domain.Entities
         public virtual Client Client { get; set; }
         public virtual IList<ItemSale> ItemSales { get; set; }
 
-        public override bool IsValid()
-        {
-            ValidationResult = new SaleValidation().Validate(this);
-            return ValidationResult.IsValid;
-        }
-
         public void AddItemSale(ItemSale itemSale)
         {
+            ItemSales = ItemSales ?? new List<ItemSale>();
             ItemSales.Add(itemSale);
         }
 

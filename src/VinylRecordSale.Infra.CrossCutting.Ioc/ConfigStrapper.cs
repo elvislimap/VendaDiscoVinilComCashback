@@ -47,14 +47,15 @@ namespace VinylRecordSale.Infra.CrossCutting.Ioc
 
             #region AppServices
 
-            services.AddScoped<IVinylDiscAppService, VinylDiscAppService>();
             services.AddScoped<ISaleAppService, SaleAppService>();
 
             #endregion
 
-            #region DomainServices
+            #region Services
 
-            services.AddScoped<ISaleService, SaleService>();
+            services.AddScoped<INotificationService, NotificationService>();
+            services.AddScoped<IItemSaleService, ItemSaleService>();
+            services.AddScoped<IConfigCashbackService, ConfigCashbackService>();
 
             #endregion
         }

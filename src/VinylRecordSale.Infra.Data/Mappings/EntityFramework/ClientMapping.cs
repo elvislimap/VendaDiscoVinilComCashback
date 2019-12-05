@@ -17,8 +17,6 @@ namespace VinylRecordSale.Infra.Data.Mappings.EntityFramework
             builder.Property(c => c.FullName).HasColumnType("varchar(100)").HasMaxLength(100).IsRequired();
             builder.Property(c => c.Email).HasColumnType("varchar(100)").HasMaxLength(100).IsRequired();
 
-            builder.Ignore(c => c.ValidationResult);
-
             builder.HasData(GetData());
         }
 

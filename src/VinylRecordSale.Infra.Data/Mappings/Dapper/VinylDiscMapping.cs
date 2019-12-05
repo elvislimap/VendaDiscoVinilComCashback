@@ -9,7 +9,6 @@ namespace VinylRecordSale.Infra.Data.Mappings.Dapper
         {
             ToTable("VinylRecordSale.VinylDiscs");
             Map(c => c.VinylDiscId).IsKey().IsIdentity();
-            Map(c => c.ValidationResult).Ignore();
         }
     }
 }
