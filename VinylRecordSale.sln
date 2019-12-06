@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.572
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Services", "1-Services", "{4E7420B1-2791-4DB1-BAC8-038509251F31}"
 EndProject
@@ -33,11 +33,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VinylRecordSale.Domain.Test
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VinylRecordSale.Application", "src\VinylRecordSale.Application\VinylRecordSale.Application.csproj", "{5595E8B4-3BE1-49B2-B674-D2CD032BC77B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VinylRecordSale.Application.Tests", "tests\VinylRecordSale.Application.Tests\VinylRecordSale.Application.Tests.csproj", "{CECDC9F8-2195-40E2-8259-38FB0EF61EDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VinylRecordSale.Application.Tests", "tests\VinylRecordSale.Application.Tests\VinylRecordSale.Application.Tests.csproj", "{CECDC9F8-2195-40E2-8259-38FB0EF61EDB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VinylRecordSale.Infra.Data.Tests", "tests\VinylRecordSale.Infra.Data.Tests\VinylRecordSale.Infra.Data.Tests.csproj", "{FC34880C-27AC-4318-A5BB-E89321656D8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VinylRecordSale.Infra.Data.Tests", "tests\VinylRecordSale.Infra.Data.Tests\VinylRecordSale.Infra.Data.Tests.csproj", "{FC34880C-27AC-4318-A5BB-E89321656D8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VinylRecordSale.Service.Api.Test", "tests\VinylRecordSale.Service.Api.Test\VinylRecordSale.Service.Api.Test.csproj", "{D0C44C19-CCCF-450E-80B0-0A934E7AFB9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VinylRecordSale.Service.Api.Test", "tests\VinylRecordSale.Service.Api.Test\VinylRecordSale.Service.Api.Test.csproj", "{D0C44C19-CCCF-450E-80B0-0A934E7AFB9B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

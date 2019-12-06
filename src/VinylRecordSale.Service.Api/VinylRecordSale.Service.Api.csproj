@@ -9,26 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20191202182815_Migration-Initial.cs" />
-    <Compile Remove="Migrations\20191202184410_Migration-Initial.cs" />
-    <Compile Remove="Migrations\20191202184946_Migration-Initial.cs" />
-    <Compile Remove="Migrations\20191202185709_Migration-Initial.cs" />
-    <Compile Remove="Migrations\20191202190942_Migration-Initial.cs" />
-    <Compile Remove="Migrations\20191202191322_Migration-Initial.cs" />
-    <Compile Remove="Migrations\20191202191530_Migration-Initial.cs" />
-    <Compile Remove="Migrations\20191202193446_Migration-Initial.cs" />
-    <Compile Remove="Migrations\20191202232613_Migration-Initial.cs" />
-    <Compile Remove="Migrations\20191202232613_Migration-Initial.Designer.cs" />
-    <Compile Remove="Migrations\20191203010401_Migration-Initial.cs" />
-    <Compile Remove="Migrations\20191203010401_Migration-Initial.Designer.cs" />
-    <Compile Remove="Migrations\20191203022652_Migration-Initial.cs" />
-    <Compile Remove="Migrations\20191203022652_Migration-Initial.Designer.cs" />
-    <Compile Remove="Migrations\20191204153518_Migration-Initial.cs" />
-    <Compile Remove="Migrations\20191204182901_Migration-Initial.cs" />
-    <Compile Remove="Migrations\20191204183857_Migration-Initial.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="3.1.6" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="3.2.1" />
@@ -43,10 +23,6 @@
   <ItemGroup>
     <ProjectReference Include="..\VinylRecordSale.Infra.CrossCutting.Ioc\VinylRecordSale.Infra.CrossCutting.Ioc.csproj" />
     <ProjectReference Include="..\VinylRecordSale.Infra.Data\VinylRecordSale.Infra.Data.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>
