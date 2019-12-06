@@ -1,4 +1,4 @@
-# VendaDiscoVinilComCashback
+# Venda de discos de vinis com cashback
 
 Passos para executar a aplicação
 ---------------------------------
